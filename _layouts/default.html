@@ -1,3 +1,15 @@
-<h1>Layout</h1>
+<html>
+<head>
+<title>{{ page.title }}</title>
+<link rel="stylesheet" type="text/css" href="stylesheets/app.css" />
+</head>
+<body>
+{% include nav.html %}
 
-{{ content }}
+<div class="row panel">
+  {{ content }}
+</div>
+
+{% include footer.html %}
+</body>
+</html>
