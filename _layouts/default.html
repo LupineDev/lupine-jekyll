@@ -1,7 +1,12 @@
 <html>
 <head>
-<title>{{ page.title }}</title>
+<title>{% if page.title %} {{ page.title }} | {% endif %} Lupine Software Development</title>
 <link rel="stylesheet" type="text/css" href="stylesheets/app.css" />
+<script src="http://code.jquery.com/jquery-1.9.1.min.js"></script>
+<script src="javascripts/foundation/foundation.js"></script>
+<script src="javascripts/foundation/foundation.topbar.js"></script>
+<link href="http://coderwall.com/stylesheets/jquery.coderwall.css" media="all" rel="stylesheet" type="text/css">
+<script src="http://coderwall.com/javascripts/jquery.coderwall.js"></script>
 </head>
 <body>
 {% include nav.html %}
