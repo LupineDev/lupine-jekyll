@@ -1,2 +1,3 @@
 source: .
 timezone: America/Hawaii
+pygments: true

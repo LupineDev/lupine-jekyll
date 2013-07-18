@@ -1,0 +1,98 @@
+<html>
+<head>
+<title> Blog |  Lupine Software Development</title>
+<link rel="stylesheet" type="text/css" href="/stylesheets/app.css" />
+<link rel="stylesheet" type="text/css" href="/stylesheets/custom.css" />
+<script src="http://code.jquery.com/jquery-1.9.1.min.js"></script>
+<script src="/javascripts/foundation/foundation.js"></script>
+<script src="/javascripts/foundation/foundation.topbar.js"></script>
+<link href="http://coderwall.com/stylesheets/jquery.coderwall.css" media="all" rel="stylesheet" type="text/css">
+<script src="http://coderwall.com/javascripts/jquery.coderwall.js"></script>
+</head>
+<body>
+<nav class="top-bar">
+  <ul class="title-area">
+    <!-- Title Area -->
+    <li class="name active">
+      <h1><a href="/">Lupine Software Development</a></h1>
+    </li>
+    <!-- Remove the class "menu-icon" to get rid of menu icon. Take out "Menu" to just have icon alone -->
+    <li class="toggle-topbar menu-icon"><a href="#"><span>Menu</span></a></li>
+  </ul>
+
+  <section class="top-bar-section">
+    <!-- Left Nav Section -->
+    <ul class="left">
+      <li class="divider"></li>
+      <li class=""><a href="/blog">Blog</a></li>
+      <li class="divider"></li>
+    </ul>
+    <ul class="right">
+      <li class="divider"></li>
+      <li class=""><a href="https://twitter.com/lupinedev">Twitter</a></li>
+      <li class="divider"></li>
+      <li class=""><a href="https://github.com/LupineDev">Github</a></li>
+      <li class="divider"></li>
+      <li class="has-dropdown"><a href="">Hawaii Tech</a>
+        <ul class="dropdown">
+          <li><a href="http://www.meetup.com/aloharb/">Aloha.rb</a></li>
+          <li><a href="http://www.meetup.com/dynamic/">OUDL</a></li>
+          <li><a href="http://hicapacity.org">HiCapacity</a></li>
+          <li><a href="http://techhui.com">Tech Hui</a></li>
+        </ul>
+      </li>
+      <li class="divider"></li>
+    </ul>
+
+    <!-- Right Nav Section -->
+  </section>
+</nav>
+
+
+<div class="row">
+  <div class="large-9 small-12 columns">
+    <div class="large-12 small-12 columns">
+    <div class="row">
+      <div class="large-12 small-12 columns">
+        <h1>Follow at Your Own Peril</h1>
+      </div>
+    </div>
+  
+    <div class="row">
+      <div class="large-12 small-12 columns panel">
+        <h3><a href="/2012/07/17/being_mindful_of_your_includes.html">Being Mindful Of Your Includes</a></h3>
+        <p><p>The use of &#8220;includes(:association_name)&#8221; in rails is a widely accepted rails best practice to prevent n + 1 queries in your views. If you aren&#8217;t sure what either of those mean check out the ruby on rails guide about <a href='http://guides.rubyonrails.org/active_record_querying.html#eager-loading-associations'>eager loading associations</a>. When you are retrieving a collection of things, this will automatically retrieve the associated object from the database and store it into memory. Without this rails would need to call an extra query for each object when you call an attribute on the association.</p></p>
+      </div>
+    </div>
+  
+    <div class="row">
+      <div class="large-12 small-12 columns panel">
+        <h3><a href="/2012/05/19/ruby-http-dont-forget-use-ssl.html">Ruby HTTP don't for get use_ssl</a></h3>
+        <p><p>In a project this week I had send some http requests from a ruby program and do something with the response. One of the requests needed to be https so I tried something along these lines&#8230;</p></p>
+      </div>
+    </div>
+  
+    <div class="row">
+      <div class="large-12 small-12 columns panel">
+        <h3><a href="/2012/02/27/using-pomodoro-technique-as-a-programmer.html">Using Pomodoro Technique as a Programmer</a></h3>
+        <p><p>Productivity and concentration are two very important words to someone who writes code for a living. There is a wide variety of tools, methodologies, tricks and &#8220;hacks&#8221; out there that claim to help one improve in these areas. One such technique that I&#8217;ve adopted over the past couple of months is known as the &#8220;Pomodoro&#8221;.</p></p>
+      </div>
+    </div>
+  
+</div>
+
+  </div>
+  <div class="large-3 small-12 columns">
+
+  </div>
+</div>
+
+  <div class="row">
+    <div class="large-12 small-12 columns text-center">
+      <p>&copy; 2013 Lupine Software Development</p>
+    </div>
+  </div>
+
+
+</body>
+</html>

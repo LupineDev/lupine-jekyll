@@ -1,0 +1,20 @@
+---
+layout: blog_list
+title: Blog
+---
+
+<div class="large-12 small-12 columns">
+    <div class="row">
+      <div class="large-12 small-12 columns">
+        <h1>Follow at Your Own Peril</h1>
+      </div>
+    </div>
+  {% for post in site.posts %}
+    <div class="row">
+      <div class="large-12 small-12 columns panel">
+        <h3><a href="{{ post.url }}">{{ post.title }}</a></h3>
+        <p>{{post.excerpt}}</p>
+      </div>
+    </div>
+  {% endfor %}
+</div>

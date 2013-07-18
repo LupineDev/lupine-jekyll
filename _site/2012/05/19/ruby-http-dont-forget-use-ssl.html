@@ -1,0 +1,94 @@
+<html>
+<head>
+<title> Ruby HTTP don't for get use_ssl |  Lupine Software Development</title>
+<link rel="stylesheet" type="text/css" href="/stylesheets/app.css" />
+<link rel="stylesheet" type="text/css" href="/stylesheets/pygments.css" />
+<script src="http://code.jquery.com/jquery-1.9.1.min.js"></script>
+<script src="/javascripts/foundation/foundation.js"></script>
+<script src="/javascripts/foundation/foundation.topbar.js"></script>
+<link href="http://coderwall.com/stylesheets/jquery.coderwall.css" media="all" rel="stylesheet" type="text/css">
+<script src="http://coderwall.com/javascripts/jquery.coderwall.js"></script>
+</head>
+<body>
+<nav class="top-bar">
+  <ul class="title-area">
+    <!-- Title Area -->
+    <li class="name active">
+      <h1><a href="/">Lupine Software Development</a></h1>
+    </li>
+    <!-- Remove the class "menu-icon" to get rid of menu icon. Take out "Menu" to just have icon alone -->
+    <li class="toggle-topbar menu-icon"><a href="#"><span>Menu</span></a></li>
+  </ul>
+
+  <section class="top-bar-section">
+    <!-- Left Nav Section -->
+    <ul class="left">
+      <li class="divider"></li>
+      <li class=""><a href="/blog">Blog</a></li>
+      <li class="divider"></li>
+    </ul>
+    <ul class="right">
+      <li class="divider"></li>
+      <li class=""><a href="https://twitter.com/lupinedev">Twitter</a></li>
+      <li class="divider"></li>
+      <li class=""><a href="https://github.com/LupineDev">Github</a></li>
+      <li class="divider"></li>
+      <li class="has-dropdown"><a href="">Hawaii Tech</a>
+        <ul class="dropdown">
+          <li><a href="http://www.meetup.com/aloharb/">Aloha.rb</a></li>
+          <li><a href="http://www.meetup.com/dynamic/">OUDL</a></li>
+          <li><a href="http://hicapacity.org">HiCapacity</a></li>
+          <li><a href="http://techhui.com">Tech Hui</a></li>
+        </ul>
+      </li>
+      <li class="divider"></li>
+    </ul>
+
+    <!-- Right Nav Section -->
+  </section>
+</nav>
+
+
+<div class="row">
+  <div class="large-12 small-12 columns">
+    <h1>Ruby HTTP don't for get use_ssl</h1>
+  </div>
+</div>
+<div class="row">
+  <div class="large-12 small-12 columns">
+    <p>In a project this week I had send some http requests from a ruby program and do something with the response. One of the requests needed to be https so I tried something along these lines&#8230;</p>
+<div class='highlight'><pre><code class='ruby'><span class='nb'>require</span> <span class='s2'>&quot;net/https&quot;</span>
+<span class='nb'>require</span> <span class='s2'>&quot;uri&quot;</span>
+
+<span class='n'>uri</span> <span class='o'>=</span> <span class='no'>URI</span><span class='o'>.</span><span class='n'>parse</span><span class='p'>(</span><span class='s2'>&quot;https://secure.com/&quot;</span><span class='p'>)</span>
+<span class='n'>http</span> <span class='o'>=</span> <span class='ss'>Net</span><span class='p'>:</span><span class='ss'>:HTTP</span><span class='o'>.</span><span class='n'>new</span><span class='p'>(</span><span class='n'>uri</span><span class='o'>.</span><span class='n'>host</span><span class='p'>,</span> <span class='n'>uri</span><span class='o'>.</span><span class='n'>port</span><span class='p'>)</span>
+<span class='n'>response</span> <span class='o'>=</span> <span class='n'>http</span><span class='o'>.</span><span class='n'>request</span><span class='p'>(</span><span class='n'>request</span><span class='p'>)</span>
+</code></pre></div>
+<p>This looks like it should work right? When URI parses the https url it even knows to use the https port&#8230;</p>
+<div class='highlight'><pre><code class='ruby'><span class='n'>uri</span><span class='o'>.</span><span class='n'>port</span>
+<span class='c1'># =&gt; 443</span>
+</code></pre></div>
+<p>Only the request kept timing out and I didn&#8217;t know why. After some googleling and rereading parts of blog posts I had previously overlooked my salvation came from a very helpful post by <a href='http://www.rubyinside.com/nethttp-cheat-sheet-2940.html'>August Lilleaas</a>. Even though the parsed URI object recognized the https port the http request still has to be told to send as https. You can set this with an option called &#8220;user_ssl&#8221;</p>
+<div class='highlight'><pre><code class='ruby'><span class='n'>http</span><span class='o'>.</span><span class='n'>use_ssl</span> <span class='o'>=</span> <span class='kp'>true</span>
+</code></pre></div>
+<p>No more ambiguous timout :)</p>
+  </div>
+</div>
+<div class="row">
+  <div class="large-12 small-12 columns">
+    <ul class="breadcrumbs">
+      <li><a href="/blog/">Blog</a></li>
+      <li class="current"><a href="page.url">Ruby HTTP don't for get use_ssl</a></li>
+    </ul>
+  </div>
+</div>
+
+  <div class="row">
+    <div class="large-12 small-12 columns text-center">
+      <p>&copy; 2013 Lupine Software Development</p>
+    </div>
+  </div>
+
+
+</body>
+</html>
