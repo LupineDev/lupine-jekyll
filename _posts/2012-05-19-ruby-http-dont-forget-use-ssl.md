@@ -1,7 +1,11 @@
 ---
 layout: post
 title: Ruby HTTP don't for get use_ssl
-tags: ruby
+categories:
+  - software development
+tags:
+  - rails
+  - ruby
 ---
 
 In a project this week I had send some http requests from a ruby program
@@ -16,6 +20,7 @@ uri = URI.parse("https://secure.com/")
 http = Net::HTTP.new(uri.host, uri.port)
 response = http.request(request)
 {% endhighlight %}
+<br />
 
 This looks like it should work right? When URI parses the https url it
 even knows to use the https port...
@@ -24,6 +29,7 @@ even knows to use the https port...
 uri.port
 # => 443
 {% endhighlight %}
+<br />
 
 Only the request kept timing out and I didn't know why. After some
 googleling and rereading parts of blog posts I had previously overlooked
@@ -35,5 +41,7 @@ called "user_ssl"
 {% highlight ruby %}
 http.use_ssl = true
 {% endhighlight %}
+<br />
 
 No more ambiguous timout :)
+

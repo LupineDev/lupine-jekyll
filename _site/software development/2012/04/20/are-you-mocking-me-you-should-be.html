@@ -1,0 +1,126 @@
+<html>
+<head>
+<title> Are you mocking me? (You should be) |  Lupine Software Development</title>
+<link rel="stylesheet" type="text/css" href="/stylesheets/app.css" />
+<link rel="stylesheet" type="text/css" href="/stylesheets/pygments.css" />
+<script src="http://code.jquery.com/jquery-1.9.1.min.js"></script>
+<script src="/javascripts/foundation/foundation.js"></script>
+<script src="/javascripts/foundation/foundation.topbar.js"></script>
+<link href="http://coderwall.com/stylesheets/jquery.coderwall.css" media="all" rel="stylesheet" type="text/css">
+<script src="http://coderwall.com/javascripts/jquery.coderwall.js"></script>
+</head>
+<body>
+<nav class="top-bar">
+  <ul class="title-area">
+    <!-- Title Area -->
+    <li class="name active">
+      <h1><a href="/">Lupine Software Development</a></h1>
+    </li>
+    <!-- Remove the class "menu-icon" to get rid of menu icon. Take out "Menu" to just have icon alone -->
+    <li class="toggle-topbar menu-icon"><a href="#"><span>Menu</span></a></li>
+  </ul>
+
+  <section class="top-bar-section">
+    <!-- Left Nav Section -->
+    <ul class="left">
+      <li class="divider"></li>
+      <li class=""><a href="/blog">Blog</a></li>
+      <li class="divider"></li>
+    </ul>
+    <ul class="right">
+      <li class="divider"></li>
+      <li class="">
+      <a href="https://twitter.com/lupinedev">
+        <img src="/images/twitter.png" style="width: 44px; height: 44px;" />
+      </a>
+      </li>
+      <li class="divider"></li>
+      <li class=""><a href="https://github.com/LupineDev"><img src="/images/github.png" style="width: 34px; height: 34px; margin: 5px 0 5px 0;" /></a></li>
+      <li class="divider"></li>
+      <li class="has-dropdown"><a href="">Hawaii Tech</a>
+        <ul class="dropdown">
+          <li><a href="http://www.meetup.com/aloharb/">Aloha.rb</a></li>
+          <li><a href="http://www.meetup.com/dynamic/">OUDL</a></li>
+          <li><a href="http://hicapacity.org">HiCapacity</a></li>
+          <li><a href="http://techhui.com">Tech Hui</a></li>
+        </ul>
+      </li>
+      <li class="divider"></li>
+    </ul>
+
+    <!-- Right Nav Section -->
+  </section>
+</nav>
+
+
+<div class="row">
+  <div class="large-12 small-12 columns">
+    <h1>Are you mocking me? (You should be)</h1>
+  </div>
+</div>
+<div class="row">
+  <div class="large-12 small-12 columns">
+    <ul class="breadcrumbs">
+      <li class="current">Posted On: 20 Apr 2012</li>
+    </ul>
+  </div>
+</div>
+<div class="row">
+  <div class="large-10 small-12 columns">
+    <p>This post is just a friendly reminder for those that practice TDD/BDD to make sure they are not putting more ceremony into their tests than is necessary. Use mocks and stubs instead!</p>
+
+<p>Mocks are just stand-ins that behave like the thing we want it to represent. Stubs will fake a method call and return a canned response. These save time both in setting up the test and in running it (depending on if your real objects are persisted in a test database). When you test a method you should only test things the method is actually <strong>doing</strong>.</p>
+
+<p>I&#8217;m going to use Ruby on Rails and RSpec as an example. A classic situation is that we have an e-commerce application with a Order model that has many ShopItems. Now all we need to test that a cart object will calculate it&#8217;s total as the sum of the prices of all of its ShopItems. We don&#8217;t care what the names of the items are or if they are actually stored in the database.</p>
+<div class='highlight'><pre><code class='ruby'><span class='n'>describe</span> <span class='no'>Order</span> <span class='k'>do</span>
+  <span class='n'>describe</span> <span class='s2'>&quot;#sub_total&quot;</span> <span class='k'>do</span>
+    <span class='c1'># writing everything to db</span>
+    <span class='n'>it</span> <span class='s2'>&quot;should calculate the sum of all of its shop_items&quot;</span> <span class='k'>do</span>
+      <span class='n'>order</span> <span class='o'>=</span> <span class='no'>Order</span><span class='o'>.</span><span class='n'>create</span><span class='p'>(</span><span class='n'>some_options</span><span class='p'>)</span>
+      <span class='mi'>3</span><span class='o'>.</span><span class='n'>times</span> <span class='k'>do</span>
+        <span class='n'>order</span><span class='o'>.</span><span class='n'>shop_items</span> <span class='o'>&lt;&lt;</span> <span class='no'>ShopItem</span><span class='o'>.</span><span class='n'>create</span><span class='p'>(</span><span class='ss'>:price</span> <span class='o'>=&gt;</span> <span class='mi'>2</span><span class='o'>.</span><span class='mo'>00</span><span class='p'>)</span>
+      <span class='k'>end</span>
+      <span class='n'>order</span><span class='o'>.</span><span class='n'>subtotal</span><span class='o'>.</span><span class='n'>should</span> <span class='n'>be_within</span><span class='p'>(</span><span class='mi'>0</span><span class='o'>.</span><span class='mo'>01</span><span class='p'>)</span><span class='o'>.</span><span class='n'>of</span><span class='p'>(</span><span class='mi'>6</span><span class='o'>.</span><span class='mi'>0</span><span class='p'>)</span>
+    <span class='k'>end</span>
+    <span class='c1'>#  mocking</span>
+    <span class='n'>it</span> <span class='s2'>&quot;should calculate the sum of all of its shop_items&quot;</span> <span class='k'>do</span>
+      <span class='n'>order</span> <span class='o'>=</span> <span class='no'>Order</span><span class='o'>.</span><span class='n'>create</span><span class='p'>(</span><span class='n'>some_options</span><span class='p'>)</span>
+      <span class='n'>fake_items</span> <span class='o'>=</span> <span class='o'>[</span><span class='n'>stub</span><span class='p'>(</span><span class='ss'>:price</span> <span class='o'>=&gt;</span> <span class='mi'>2</span><span class='o'>.</span><span class='mo'>00</span><span class='p'>),</span> <span class='n'>stub</span><span class='p'>(</span><span class='ss'>:price</span> <span class='o'>=&gt;</span> <span class='mi'>2</span><span class='o'>.</span><span class='mo'>00</span><span class='p'>),</span> <span class='n'>stub</span><span class='p'>(</span><span class='ss'>:price</span> <span class='o'>=&gt;</span> <span class='mi'>2</span><span class='o'>.</span><span class='mo'>00</span><span class='p'>)</span><span class='o'>]</span>
+      <span class='n'>order</span><span class='o'>.</span><span class='n'>stub!</span><span class='p'>(</span><span class='ss'>:shop_items</span><span class='p'>)</span><span class='o'>.</span><span class='n'>and_return</span><span class='p'>(</span><span class='n'>fake_items</span><span class='p'>)</span>
+      <span class='n'>order</span><span class='o'>.</span><span class='n'>subtotal</span><span class='o'>.</span><span class='n'>should</span> <span class='n'>be_within</span><span class='p'>(</span><span class='mi'>0</span><span class='o'>.</span><span class='mo'>01</span><span class='p'>)</span><span class='o'>.</span><span class='n'>of</span><span class='p'>(</span><span class='mi'>6</span><span class='o'>.</span><span class='mi'>0</span><span class='p'>)</span>
+    <span class='k'>end</span>
+  <span class='k'>end</span>
+<span class='k'>end</span>
+</code></pre></div><br />
+<p>Origninally posted on <a href='http://www.techhui.com/profiles/blogs/are-you-mocking-me-you-should-be'>TechHui</a></p>
+  </div>
+  <div class="large-2 small-12 columns">
+    <ul class="side-nav">
+  <li class="divider"><li>
+  <li><a href="/blog/categories/">Categories</a></li>
+  <li class="divider"><li>
+  <li><a href="/blog/tags/">Tags</a></li>
+  <li class="divider"><li>
+</ul>
+<section class="coderwall" data-coderwall-username="lupinedev" data-coderwall-orientation="vertical"></section>
+
+  </div>
+</div>
+<div class="row">
+  <div class="large-12 small-12 columns">
+    <ul class="breadcrumbs">
+      <li><a href="/blog/">Blog</a></li>
+      <li class="current"><a href="page.url">Are you mocking me? (You should be)</a></li>
+    </ul>
+  </div>
+</div>
+
+  <div class="row">
+    <div class="large-12 small-12 columns text-center">
+      <p>&copy; 2013 Lupine Software Development</p>
+    </div>
+  </div>
+
+
+</body>
+</html>

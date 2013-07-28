@@ -1,6 +1,11 @@
 ---
 layout: post
-title: Using Pomodoro Technique as a Programmer
+title: Using the Pomodoro Technique as a Programmer
+categories:
+  - software development
+tags:
+  - productivity
+  - motivation
 ---
 
 Productivity and concentration are two very important words to someone who writes code for a living. There is a wide variety of tools, methodologies, tricks and "hacks" out there that claim to help one improve in these areas. One such technique that I've adopted over the past couple of months is known as the "Pomodoro".
@@ -25,3 +30,8 @@ Many programmers, myself included, are intrigued by problems and feel a strong u
 More Pomodoro Links:
 
 - [http://www.lifehack.org/articles/productivity/the-pomodoro-technique-is-it-right-for-you.html](http://www.lifehack.org/articles/productivity/the-pomodoro-technique-is-it-right-for-you.html)
+- [http://pragprog.com/book/snfocus/pomodoro-technique-illustrated](http://pragprog.com/book/snfocus/pomodoro-technique-illustrated)
+- [http://programmingzen.com/2011/03/14/getting-stuff-done-with-the-pomodoro-technique/](http://programmingzen.com/2011/03/14/getting-stuff-done-with-the-pomodoro-technique/)
+- [http://tomatoi.st/](http://tomatoi.st/)
+
+Origninally posted on [TechHui](http://www.techhui.com/profiles/blogs/employing-the-pomodoro-technique-as-a-computer-programmer)

@@ -1,0 +1,115 @@
+<html>
+<head>
+<title> Installing MYSQL Gem On Snow Leopard |  Lupine Software Development</title>
+<link rel="stylesheet" type="text/css" href="/stylesheets/app.css" />
+<link rel="stylesheet" type="text/css" href="/stylesheets/pygments.css" />
+<script src="http://code.jquery.com/jquery-1.9.1.min.js"></script>
+<script src="/javascripts/foundation/foundation.js"></script>
+<script src="/javascripts/foundation/foundation.topbar.js"></script>
+<link href="http://coderwall.com/stylesheets/jquery.coderwall.css" media="all" rel="stylesheet" type="text/css">
+<script src="http://coderwall.com/javascripts/jquery.coderwall.js"></script>
+</head>
+<body>
+<nav class="top-bar">
+  <ul class="title-area">
+    <!-- Title Area -->
+    <li class="name active">
+      <h1><a href="/">Lupine Software Development</a></h1>
+    </li>
+    <!-- Remove the class "menu-icon" to get rid of menu icon. Take out "Menu" to just have icon alone -->
+    <li class="toggle-topbar menu-icon"><a href="#"><span>Menu</span></a></li>
+  </ul>
+
+  <section class="top-bar-section">
+    <!-- Left Nav Section -->
+    <ul class="left">
+      <li class="divider"></li>
+      <li class=""><a href="/blog">Blog</a></li>
+      <li class="divider"></li>
+    </ul>
+    <ul class="right">
+      <li class="divider"></li>
+      <li class="">
+      <a href="https://twitter.com/lupinedev">
+        <img src="/images/twitter.png" style="width: 44px; height: 44px;" />
+      </a>
+      </li>
+      <li class="divider"></li>
+      <li class=""><a href="https://github.com/LupineDev"><img src="/images/github.png" style="width: 34px; height: 34px; margin: 5px 0 5px 0;" /></a></li>
+      <li class="divider"></li>
+      <li class="has-dropdown"><a href="">Hawaii Tech</a>
+        <ul class="dropdown">
+          <li><a href="http://www.meetup.com/aloharb/">Aloha.rb</a></li>
+          <li><a href="http://www.meetup.com/dynamic/">OUDL</a></li>
+          <li><a href="http://hicapacity.org">HiCapacity</a></li>
+          <li><a href="http://techhui.com">Tech Hui</a></li>
+        </ul>
+      </li>
+      <li class="divider"></li>
+    </ul>
+
+    <!-- Right Nav Section -->
+  </section>
+</nav>
+
+
+<div class="row">
+  <div class="large-12 small-12 columns">
+    <h1>Installing MYSQL Gem On Snow Leopard</h1>
+  </div>
+</div>
+<div class="row">
+  <div class="large-12 small-12 columns">
+    <ul class="breadcrumbs">
+      <li class="current">Posted On: 23 May 2009</li>
+    </ul>
+  </div>
+</div>
+<div class="row">
+  <div class="large-10 small-12 columns">
+    <p>This was the <strong>one</strong> post I made on my tumblr blog. Since it looked kind of lonely up there I thought I would bring it over&#8230;</p>
+
+<p>I had quite a bit of a headache trying to get the MySQL ruby gem working on Snow Leopard. Every time I would try to migrate my database or start Mongrel I would get &#8220;NameError (uninitialized constant MysqlCompat::MysqlRes)&#8221;.</p>
+
+<p>After doing some googling I found the ruby weblog guide for upgrading to Snow Leopard. There they recommend installing the 64 bit version of MySQL and then to install the gem run the following command:</p>
+<div class='highlight'><pre><code class='bash'><span class='nv'>$ </span>sudo env <span class='nv'>ARCHFLAGS</span><span class='o'>=</span><span class='s2'>&quot;-arch x86_64&quot;</span> gem install mysql -- --with-mysql-config<span class='o'>=</span>/usr/local/mysql/bin/mysql_config
+</code></pre></div><br />
+<p>MySQL and the gem installed ok but I would still get the same error when trying to migrate or start the development server. A little more googling led me to Robby Grossman’s blog with instructions for installing MySQL using macports and a slightly different command for installing the gem. To install MySQL with macports:</p>
+<div class='highlight'><pre><code class='bash'><span class='nv'>$ </span>sudo port install mysql5-devel
+<span class='nv'>$ </span>sudo /opt/local/lib/mysql5/mysql_install_db -user<span class='o'>=</span>mysql
+</code></pre></div><br />
+<p>Then I combined his instructions for installing the gem with the one on the ruby weblog.</p>
+<div class='highlight'><pre><code class='bash'><span class='nv'>$ </span>sudo env <span class='nv'>ARCHFLAGS</span><span class='o'>=</span><span class='s2'>&quot;-arch x86_64&quot;</span> gem install mysql -- --with-mysql-config<span class='o'>=</span>/usr/local/mysql/bin/mysql_config
+</code></pre></div><br />
+<p>Hope this helps, Good luck!</p>
+  </div>
+  <div class="large-2 small-12 columns">
+    <ul class="side-nav">
+  <li class="divider"><li>
+  <li><a href="/blog/categories/">Categories</a></li>
+  <li class="divider"><li>
+  <li><a href="/blog/tags/">Tags</a></li>
+  <li class="divider"><li>
+</ul>
+<section class="coderwall" data-coderwall-username="lupinedev" data-coderwall-orientation="vertical"></section>
+
+  </div>
+</div>
+<div class="row">
+  <div class="large-12 small-12 columns">
+    <ul class="breadcrumbs">
+      <li><a href="/blog/">Blog</a></li>
+      <li class="current"><a href="page.url">Installing MYSQL Gem On Snow Leopard</a></li>
+    </ul>
+  </div>
+</div>
+
+  <div class="row">
+    <div class="large-12 small-12 columns text-center">
+      <p>&copy; 2013 Lupine Software Development</p>
+    </div>
+  </div>
+
+
+</body>
+</html>

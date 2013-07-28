@@ -1,0 +1,108 @@
+<html>
+<head>
+<title> Testing :dependent Parameter In Rails |  Lupine Software Development</title>
+<link rel="stylesheet" type="text/css" href="/stylesheets/app.css" />
+<link rel="stylesheet" type="text/css" href="/stylesheets/pygments.css" />
+<script src="http://code.jquery.com/jquery-1.9.1.min.js"></script>
+<script src="/javascripts/foundation/foundation.js"></script>
+<script src="/javascripts/foundation/foundation.topbar.js"></script>
+<link href="http://coderwall.com/stylesheets/jquery.coderwall.css" media="all" rel="stylesheet" type="text/css">
+<script src="http://coderwall.com/javascripts/jquery.coderwall.js"></script>
+</head>
+<body>
+<nav class="top-bar">
+  <ul class="title-area">
+    <!-- Title Area -->
+    <li class="name active">
+      <h1><a href="/">Lupine Software Development</a></h1>
+    </li>
+    <!-- Remove the class "menu-icon" to get rid of menu icon. Take out "Menu" to just have icon alone -->
+    <li class="toggle-topbar menu-icon"><a href="#"><span>Menu</span></a></li>
+  </ul>
+
+  <section class="top-bar-section">
+    <!-- Left Nav Section -->
+    <ul class="left">
+      <li class="divider"></li>
+      <li class=""><a href="/blog">Blog</a></li>
+      <li class="divider"></li>
+    </ul>
+    <ul class="right">
+      <li class="divider"></li>
+      <li class="">
+      <a href="https://twitter.com/lupinedev">
+        <img src="/images/twitter.png" style="width: 44px; height: 44px;" />
+      </a>
+      </li>
+      <li class="divider"></li>
+      <li class=""><a href="https://github.com/LupineDev"><img src="/images/github.png" style="width: 34px; height: 34px; margin: 5px 0 5px 0;" /></a></li>
+      <li class="divider"></li>
+      <li class="has-dropdown"><a href="">Hawaii Tech</a>
+        <ul class="dropdown">
+          <li><a href="http://www.meetup.com/aloharb/">Aloha.rb</a></li>
+          <li><a href="http://www.meetup.com/dynamic/">OUDL</a></li>
+          <li><a href="http://hicapacity.org">HiCapacity</a></li>
+          <li><a href="http://techhui.com">Tech Hui</a></li>
+        </ul>
+      </li>
+      <li class="divider"></li>
+    </ul>
+
+    <!-- Right Nav Section -->
+  </section>
+</nav>
+
+
+<div class="row">
+  <div class="large-12 small-12 columns">
+    <h1>Testing :dependent Parameter In Rails</h1>
+  </div>
+</div>
+<div class="row">
+  <div class="large-12 small-12 columns">
+    <ul class="breadcrumbs">
+      <li class="current">Posted On: 21 Jun 2011</li>
+    </ul>
+  </div>
+</div>
+<div class="row">
+  <div class="large-10 small-12 columns">
+    <p>In an effort to post on here more often I&#8217;m going to start small. I had a brain fart on how to test the has_many :dependent parameter for Rails associations today. With my trusty <a href='http://pragprog.com/titles/achbd/the-rspec-book'>rspec book</a> not on-hand, it just took a little googling to find a solution.</p>
+<div class='highlight'><pre><code class='ruby'><span class='n'>describe</span> <span class='no'>Reticulum</span> <span class='k'>do</span>
+  <span class='n'>describe</span> <span class='s2'>&quot;associations&quot;</span> <span class='k'>do</span>
+    <span class='n'>should</span> <span class='p'>{</span> <span class='n'>have_many</span><span class='p'>(</span><span class='ss'>:reticules</span><span class='p'>)</span><span class='o'>.</span><span class='n'>dependent</span><span class='p'>(</span><span class='ss'>:restrict</span><span class='p'>)</span> <span class='p'>}</span>
+  <span class='k'>end</span>
+<span class='k'>end</span>
+</code></pre></div><br />
+<p>Many thanks to <a href='http://rspeicher.tumblr.com/'>Robert Spiecher</a> in his reply to this <a href='http://stackoverflow.com/questions/2673041/checking-activerecord-associations-in-rspec'>Stackoverflow post</a> that showed me the light :)</p>
+  </div>
+  <div class="large-2 small-12 columns">
+    <ul class="side-nav">
+  <li class="divider"><li>
+  <li><a href="/blog/categories/">Categories</a></li>
+  <li class="divider"><li>
+  <li><a href="/blog/tags/">Tags</a></li>
+  <li class="divider"><li>
+</ul>
+<section class="coderwall" data-coderwall-username="lupinedev" data-coderwall-orientation="vertical"></section>
+
+  </div>
+</div>
+<div class="row">
+  <div class="large-12 small-12 columns">
+    <ul class="breadcrumbs">
+      <li><a href="/blog/">Blog</a></li>
+      <li class="current"><a href="page.url">Testing :dependent Parameter In Rails</a></li>
+    </ul>
+  </div>
+</div>
+
+  <div class="row">
+    <div class="large-12 small-12 columns text-center">
+      <p>&copy; 2013 Lupine Software Development</p>
+    </div>
+  </div>
+
+
+</body>
+</html>

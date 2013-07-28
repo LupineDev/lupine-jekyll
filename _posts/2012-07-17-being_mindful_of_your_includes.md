@@ -1,6 +1,11 @@
 ---
 layout: post
 title: Being Mindful Of Your Includes
+categories:
+  - software development
+tags:
+  - rails
+  - ruby
 ---
 
 The use of "includes(:association_name)" in rails is a widely accepted
@@ -28,4 +33,11 @@ web application/api) memory is extremely limited.  Therefore, if
 your rails view or controller action has quite a few "collections
 of collections" you might consider these memory saving alternatives.
 
-* 
+- Restructure the sitemap or user interface so not quite so many things need to be displayed at the same time.  This could be as simple as pagination, or more involved like lazy loading "collections of collections" only when they are needed through an asynchronous request.
+- Be sure to use YourModel.find_each when you have to iterate through 
+  extremely large collections of objects.  The find_each method retrieves the collections in batches.  There is even an option to specify the batch size to reach the happy medium between memory and runtime.
+
+P.S. If you haven't done so already don't forget to register for [AlohaRubyConf](http://aloharubyconf.com/)!
+They have an amazing line up of speakers. It's a great opportunity to learn from leaders of the ruby community and share experiences with real developers in the same field.
+
+Origninally posted on [TechHui](http://www.techhui.com/profiles/blogs/being-mindful-of-your-includes)
