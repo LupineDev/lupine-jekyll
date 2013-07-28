@@ -1,0 +1,49 @@
+---
+layout : blog_list
+title  : Categories
+---
+<h3>Categories</h3>
+<div class="cat-cloud">
+   {% for cat in site.categories %}
+      <a href="#posts-cat" id="{{ forloop.index }}" class="__cat" style="margin: 5px">{{ cat[0] }}</a>
+      <ul id="list_{{ forloop.index }}" style="display:none;">
+         {% for post in cat[1] %}
+            <li><a href="{{ post.url }}">{{ post.title }}</a></li>
+         {% endfor %}
+      </ul>
+   {% endfor %}
+</div>
+
+<div id="posts-cats" class="post-list" style="margin: 50px;"></div>
+
+<script type="text/javascript">
+   $(function() {
+      var minFont = 15.0,
+          maxFont = 40.0,
+          diffFont = maxFont - minFont,
+          size = 0;
+       
+      {% assign max = 1.0 %}
+      {% for cat in site.categories%}
+         {% if cat[1].size > max %}
+            {% assign max = cat[1].size %}
+         {% endif %}
+      {% endfor %}
+            
+      {% for cat in site.categories %}
+         size = (Math.log({{ cat[1].size }}) / Math.log({{ max }})) * diffFont + minFont;
+         $("#{{ forloop.index }}").css("font-size", size + "px");
+      {% endfor %}
+
+      $('.cat-cloud a[class^="__cat"]').click(function() {
+         $('.post-list').empty();
+         $('#list_' + $(this).attr('id')).each(function() {
+            $('.post-list').append('<ul>' + $(this).html() + '</ul>');
+         });
+      });
+   });
+</script>
+
+<div>
+  Tag cloud thanks to this <a href="http://enrmarc.github.io/blog/Jekyll-tagcloud/">blog post</a>
+</div>
