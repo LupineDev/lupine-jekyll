@@ -31,11 +31,11 @@
       <li class="divider"></li>
       <li class="">
       <a href="https://twitter.com/lupinedev">
-        <img src="/images/twitter.png" style="width: 44px; height: 44px;" />
+        <img src="/images/twitter.png" rel="me" style="width: 44px; height: 44px;" />
       </a>
       </li>
       <li class="divider"></li>
-      <li class=""><a href="https://github.com/LupineDev"><img src="/images/github.png" style="width: 34px; height: 34px; margin: 5px 0 5px 0;" /></a></li>
+      <li class=""><a href="https://github.com/LupineDev" rel="me"><img src="/images/github.png" style="width: 34px; height: 34px; margin: 5px 0 5px 0;" /></a></li>
       <li class="divider"></li>
       <li class="has-dropdown"><a href="">Hawaii Tech</a>
         <ul class="dropdown">
@@ -67,21 +67,21 @@
 </div>
 <div class="row">
   <div class="large-10 small-12 columns">
-    <p>The use of &#8220;includes(:association_name)&#8221; in rails is a widely accepted rails best practice to prevent n + 1 queries in your views. If you aren&#8217;t sure what either of those mean check out the ruby on rails guide about <a href='http://guides.rubyonrails.org/active_record_querying.html#eager-loading-associations'>eager loading associations</a>. When you are retrieving a collection of things, this will automatically retrieve the associated object from the database and store it into memory. Without this rails would need to call an extra query for each object when you call an attribute on the association.</p>
+    <p>The use of “includes(:association_name)” in rails is a widely accepted rails best practice to prevent n + 1 queries in your views. If you aren’t sure what either of those mean check out the ruby on rails guide about <a href="http://guides.rubyonrails.org/active_record_querying.html#eager-loading-associations">eager loading associations</a>. When you are retrieving a collection of things, this will automatically retrieve the associated object from the database and store it into memory. Without this rails would need to call an extra query for each object when you call an attribute on the association.</p>
 
-<p>Now this is great especially for <em>belongs_to</em> associations. Where you should be careful with (and probably not use) this is eager loading <em>has_many</em> associations. Sure it will cut down on quite a few queries when the collections are being retrieved and speed up the rendering of the view. The problem is that when the collection and all of it&#8217;s has_many associated objects are retrieved in a single query they all have to be stored in memory. As the size of the initial collection or the associated has_many objects grow it will not scale very well and can quickly bring your server to it&#8217;s knees.</p>
+<p>Now this is great especially for <em>belongs_to</em> associations. Where you should be careful with (and probably not use) this is eager loading <em>has_many</em> associations. Sure it will cut down on quite a few queries when the collections are being retrieved and speed up the rendering of the view. The problem is that when the collection and all of it’s has_many associated objects are retrieved in a single query they all have to be stored in memory. As the size of the initial collection or the associated has_many objects grow it will not scale very well and can quickly bring your server to it’s knees.</p>
 
-<p>In computer science there is often a sliding scale between optimizing for run-time or memory. For rails (and pretty much every web application/api) memory is extremely limited. Therefore, if your rails view or controller action has quite a few &#8220;collections of collections&#8221; you might consider these memory saving alternatives.</p>
+<p>In computer science there is often a sliding scale between optimizing for run-time or memory. For rails (and pretty much every web application/api) memory is extremely limited. Therefore, if your rails view or controller action has quite a few “collections of collections” you might consider these memory saving alternatives.</p>
 
 <ul>
-<li>Restructure the sitemap or user interface so not quite so many things need to be displayed at the same time. This could be as simple as pagination, or more involved like lazy loading &#8220;collections of collections&#8221; only when they are needed through an asynchronous request.</li>
+<li>Restructure the sitemap or user interface so not quite so many things need to be displayed at the same time. This could be as simple as pagination, or more involved like lazy loading “collections of collections” only when they are needed through an asynchronous request.</li>
 
 <li>Be sure to use YourModel.find_each when you have to iterate through extremely large collections of objects. The find_each method retrieves the collections in batches. There is even an option to specify the batch size to reach the happy medium between memory and runtime.</li>
 </ul>
 
-<p>P.S. If you haven&#8217;t done so already don&#8217;t forget to register for <a href='http://aloharubyconf.com/'>AlohaRubyConf</a>! They have an amazing line up of speakers. It&#8217;s a great opportunity to learn from leaders of the ruby community and share experiences with real developers in the same field.</p>
+<p>P.S. If you haven’t done so already don’t forget to register for <a href="http://aloharubyconf.com/">AlohaRubyConf</a>! They have an amazing line up of speakers. It’s a great opportunity to learn from leaders of the ruby community and share experiences with real developers in the same field.</p>
 
-<p>Origninally posted on <a href='http://www.techhui.com/profiles/blogs/being-mindful-of-your-includes'>TechHui</a></p>
+<p>Origninally posted on <a href="http://www.techhui.com/profiles/blogs/being-mindful-of-your-includes">TechHui</a></p>
   </div>
   <div class="large-2 small-12 columns">
     <ul class="side-nav">

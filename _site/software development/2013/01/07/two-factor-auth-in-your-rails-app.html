@@ -31,11 +31,11 @@
       <li class="divider"></li>
       <li class="">
       <a href="https://twitter.com/lupinedev">
-        <img src="/images/twitter.png" style="width: 44px; height: 44px;" />
+        <img src="/images/twitter.png" rel="me" style="width: 44px; height: 44px;" />
       </a>
       </li>
       <li class="divider"></li>
-      <li class=""><a href="https://github.com/LupineDev"><img src="/images/github.png" style="width: 34px; height: 34px; margin: 5px 0 5px 0;" /></a></li>
+      <li class=""><a href="https://github.com/LupineDev" rel="me"><img src="/images/github.png" style="width: 34px; height: 34px; margin: 5px 0 5px 0;" /></a></li>
       <li class="divider"></li>
       <li class="has-dropdown"><a href="">Hawaii Tech</a>
         <ul class="dropdown">
@@ -67,68 +67,84 @@
 </div>
 <div class="row">
   <div class="large-10 small-12 columns">
-    <p>Most rails applications have some sort of &#8220;user&#8221; to represent either customers who are consuming the service or administrators that are publishing content to the web application. It&#8217;s important that these users are authenticated (ensuring that they are who they say they are). For user authentication in a Ruby on Rails application, <a href='https://github.com/plataformatec/devise'>Devise</a> is one of the best solutions out there. It has a very active community and wide variety of options and extensions to fit your business model. Sometimes customers may ask for or the application requires an additional layer of authentication beyond the basic username/password combination.</p>
+    <p>Most rails applications have some sort of “user” to represent either customers who are consuming the service or administrators that are publishing content to the web application. It’s important that these users are authenticated (ensuring that they are who they say they are). For user authentication in a Ruby on Rails application, <a href="https://github.com/plataformatec/devise">Devise</a> is one of the best solutions out there. It has a very active community and wide variety of options and extensions to fit your business model. Sometimes customers may ask for or the application requires an additional layer of authentication beyond the basic username/password combination.</p>
 
 <p>Enter Yubikey.</p>
 
-<p><a href='http://www.yubico.com/products/yubikey-hardware/'>Yubikey Hardware</a> is a small usb &#8220;key&#8221; that is set up to generate unique <a href='http://en.wikipedia.org/wiki/One-time_password'>one-time passwords</a> that are validated against their server. Fortunately someone has written an extension to incorporate the yubikey as a second factor of authentication against devise users called <a href='https://github.com/mort666/yubikey_database_authenticatable'>yubikey_database_authenticatable</a>.</p>
+<p><a href="http://www.yubico.com/products/yubikey-hardware/">Yubikey Hardware</a> is a small usb “key” that is set up to generate unique <a href="http://en.wikipedia.org/wiki/One-time_password">one-time passwords</a> that are validated against their server. Fortunately someone has written an extension to incorporate the yubikey as a second factor of authentication against devise users called <a href="https://github.com/mort666/yubikey_database_authenticatable">yubikey_database_authenticatable</a>.</p>
 
 <p>In order to require users to log in with a yubikey there are a few large steps you have to take.</p>
 
 <ol>
 <li>Have a rails application</li>
 
-<li>Set up regular &#8216;database_authenticatable&#8217; user authentication with devise. And require user authentication for access to all or part of the web application.</li>
+<li>Set up regular ‘database_authenticatable’ user authentication with devise. And require user authentication for access to all or part of the web application.</li>
 
-<li>Add &#8216;yubikey_database_authenticatable&#8217; gem to your project and set up the user model and table to use yubikey authentication.</li>
+<li>Add ‘yubikey_database_authenticatable’ gem to your project and set up the user model and table to use yubikey authentication.</li>
 
 <li>Generate the devise views and customize the session login page to include the yubikey one-time password.</li>
 
 <li>Add user managment/administration to the application for regulating and associating users with a yubikey.</li>
 </ol>
 
-<p>I have created a skeleton rails app with these steps and posted it to <a href='https://github.com/LupineDev/rails_with_yubikey'>Github</a></p>
+<p>I have created a skeleton rails app with these steps and posted it to <a href="https://github.com/LupineDev/rails_with_yubikey">Github</a></p>
 
-<h4 id='1_have_a_rails_application'>1. Have a rails application</h4>
+<h4 id="1_have_a_rails_application">1. Have a rails application</h4>
 
 <p>For this app I am using rails 3.2.12</p>
 <div class='highlight'><pre><code class='bash'><span class='nv'>$ </span>rails new rails_with_yubikey
 <span class='nv'>$ </span><span class='nb'>cd </span>rails_with_yubikey/
-</code></pre></div><br />
+</code></pre></div>
+<p><br /></p>
+
 <p>At Ikayzo we have a fondness for lemurs so this application will maintain a list of lemurs species.</p>
 <div class='highlight'><pre><code class='bash'><span class='nv'>$ </span>rails g scaffold lemurs species:string description:text
-</code></pre></div><br />
+</code></pre></div>
+<p><br /></p>
+
 <p>Now that we have some actual pages in the applications we can set the root url of the application to the LemursController</p>
 <div class='highlight'><pre><code class='bash'><span class='nv'>$ </span>rm public/index.html
-</code></pre></div><br /><div class='highlight'><pre><code class='ruby'><span class='c1'># config/routes.rb</span>
+</code></pre></div>
+<p><br /></p>
+<div class='highlight'><pre><code class='ruby'><span class='c1'># config/routes.rb</span>
 <span class='o'>.</span><span class='n'>.</span><span class='o'>.</span>
 <span class='n'>root</span> <span class='ss'>:to</span> <span class='o'>=&gt;</span> <span class='s1'>&#39;lemurs#index&#39;</span>
 <span class='o'>.</span><span class='n'>.</span><span class='o'>.</span>
-</code></pre></div><br />
-<h4 id='2_set_up_regular_devise_authentication'>2. Set up regular devise authentication</h4>
+</code></pre></div>
+<p><br /></p>
 
-<p>There is already some great documentation for this on the <a href='https://github.com/plataformatec/devise#getting-started'>Devise readme</a> but here are the steps I took to add it to this rails application.</p>
+<h4 id="2_set_up_regular_devise_authentication">2. Set up regular devise authentication</h4>
+
+<p>There is already some great documentation for this on the <a href="https://github.com/plataformatec/devise#getting-started">Devise readme</a> but here are the steps I took to add it to this rails application.</p>
 
 <p>Add devise to the global part of the Gemfile</p>
 <div class='highlight'><pre><code class='ruby'><span class='c1'># Gemfile</span>
 <span class='o'>.</span><span class='n'>.</span><span class='o'>.</span>
 <span class='n'>gem</span> <span class='s1'>&#39;devise&#39;</span>
 <span class='o'>.</span><span class='n'>.</span><span class='o'>.</span>
-</code></pre></div><br /><div class='highlight'><pre><code class='bash'><span class='nv'>$ </span>bundle install
-</code></pre></div><br />
+</code></pre></div>
+<p><br /></p>
+<div class='highlight'><pre><code class='bash'><span class='nv'>$ </span>bundle install
+</code></pre></div>
+<p><br /></p>
+
 <p>Next generate the devise files and user model</p>
 <div class='highlight'><pre><code class='bash'><span class='nv'>$ </span>rails generate devise:install
 <span class='nv'>$ </span>rails generate devise User
 <span class='nv'>$ </span>rake db:migrate
-</code></pre></div><br />
+</code></pre></div>
+<p><br /></p>
+
 <p>The only thing left is to require users to log in when accessing the LemursController</p>
 <div class='highlight'><pre><code class='ruby'><span class='c1'># app/controllers/lemurs_controller.rb</span>
 <span class='k'>class</span> <span class='nc'>LemursController</span> <span class='o'>&lt;</span> <span class='no'>ApplicationController</span>
   <span class='n'>before_filter</span> <span class='ss'>:authenticate_user!</span>
   <span class='o'>.</span><span class='n'>.</span><span class='o'>.</span>
 <span class='k'>end</span>
-</code></pre></div><br />
-<h4 id='3_add_yubikey_database_authenticatable_extension_to_devise'>3. Add yubikey_database_authenticatable extension to devise</h4>
+</code></pre></div>
+<p><br /></p>
+
+<h4 id="3_add_yubikey_database_authenticatable_extension_to_devise">3. Add yubikey_database_authenticatable extension to devise</h4>
 
 <p>First add the yubikey_database_authenticatable gem to the applications Gemfile</p>
 <div class='highlight'><pre><code class='ruby'><span class='c1'># Gemfile</span>
@@ -136,26 +152,38 @@
 <span class='n'>gem</span> <span class='s1'>&#39;devise&#39;</span>
 <span class='n'>gem</span> <span class='s1'>&#39;yubikey_database_authenticatable&#39;</span>
 <span class='o'>.</span><span class='n'>.</span><span class='o'>.</span>
-</code></pre></div><br /><div class='highlight'><pre><code class='bash'><span class='nv'>$ </span>bundle install
-</code></pre></div><br />
+</code></pre></div>
+<p><br /></p>
+<div class='highlight'><pre><code class='bash'><span class='nv'>$ </span>bundle install
+</code></pre></div>
+<p><br /></p>
+
 <p>There are two new columns that the users table will need to authenticat witht he yubikey.</p>
 <div class='highlight'><pre><code class='bash'><span class='nv'>$ </span>rails generate migration add_yubikey_to_users
-</code></pre></div><br /><div class='highlight'><pre><code class='ruby'><span class='c1'># db/migrate/TIMESTAMP_addyubikey_to_users.rb</span>
-<span class='k'>class</span> <span class='nc'>AddYubikeyToUsers</span> <span class='o'>&lt;</span> <span class='ss'>ActiveRecord</span><span class='p'>:</span><span class='ss'>:Migration</span>
+</code></pre></div>
+<p><br /></p>
+<div class='highlight'><pre><code class='ruby'><span class='c1'># db/migrate/TIMESTAMP_addyubikey_to_users.rb</span>
+<span class='k'>class</span> <span class='nc'>AddYubikeyToUsers</span> <span class='o'>&lt;</span> <span class='no'>ActiveRecord</span><span class='o'>::</span><span class='no'>Migration</span>
   <span class='k'>def</span> <span class='nf'>change</span>
     <span class='n'>add_column</span> <span class='ss'>:users</span><span class='p'>,</span> <span class='ss'>:useyubikey</span><span class='p'>,</span> <span class='ss'>:boolean</span>
     <span class='n'>add_column</span> <span class='ss'>:users</span><span class='p'>,</span> <span class='ss'>:registeredyubikey</span><span class='p'>,</span> <span class='ss'>:string</span>
   <span class='k'>end</span>
 <span class='k'>end</span>
-</code></pre></div><br /><div class='highlight'><pre><code class='bash'><span class='nv'>$ </span>rake db:migrate
-</code></pre></div><br />
+</code></pre></div>
+<p><br /></p>
+<div class='highlight'><pre><code class='bash'><span class='nv'>$ </span>rake db:migrate
+</code></pre></div>
+<p><br /></p>
+
 <dl>
 <dt>You will have to replace :database_authenticatable with</dt>
 
 <dd>yubikey_database_authenticatable to the devise line of the user model.</dd>
 </dl>
 <div class='highlight'><pre><code class='bash'><span class='nv'>$ </span>rails generate devise:views
-</code></pre></div><br /><div class='highlight'><pre><code class='html'># app/views/devise/sessions/new.html.erb
+</code></pre></div>
+<p><br /></p>
+<div class='highlight'><pre><code class='html'># app/views/devise/sessions/new.html.erb
 
 <span class='nt'>&lt;h2&gt;</span>Sign in<span class='nt'>&lt;/h2&gt;</span>
 
@@ -188,14 +216,16 @@
 <span class='err'>&lt;</span>% end %&gt;
 
 <span class='err'>&lt;</span>%= render :partial =&gt; &quot;devise/shared/links&quot; %&gt;
-</code></pre></div><br />
-<h4 id='5_add_user_managment_to_the_application_for_regulating_and_associating_yubikeys_with_users'>5. Add user managment to the application for regulating and associating yubikeys with users</h4>
+</code></pre></div>
+<p><br /></p>
+
+<h4 id="5_add_user_managment_to_the_application_for_regulating_and_associating_yubikeys_with_users">5. Add user managment to the application for regulating and associating yubikeys with users</h4>
 
 <p>For this application I just created a user and added a yubikey to them through the rails console. To require a user to login with yubikey the boolean <strong>use_yubikey</strong> needs to be set to <strong>true</strong>. The other user also needs to have the <strong>registeredyubikey</strong> field set to their yubikeky. I did this through the console by copying the text output from the yubikey to a clipboard and setting the field in the console. Part of the code that was added to the user model is designed to peel of the first 11 characters of the yubikey one-time password which is its static and unique identifier.</p>
 
 <p>In a real world application there will need to be features built in to managing the yubikey for the user. If the customers/users will be providing their own yubikey they will need to update these settings themselves. However if the yubikeys are distributed to a small group of users, managing these attributes should probably be hidden behind some administration side of the application.</p>
 
-<p>Origninally posted on <a href='http://www.techhui.com/profiles/blogs/add-two-factor-authentication-to-your-rails-app-with-devise'>TechHui</a></p>
+<p>Origninally posted on <a href="http://www.techhui.com/profiles/blogs/add-two-factor-authentication-to-your-rails-app-with-devise">TechHui</a></p>
   </div>
   <div class="large-2 small-12 columns">
     <ul class="side-nav">

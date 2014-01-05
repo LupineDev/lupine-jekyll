@@ -31,11 +31,11 @@
       <li class="divider"></li>
       <li class="">
       <a href="https://twitter.com/lupinedev">
-        <img src="/images/twitter.png" style="width: 44px; height: 44px;" />
+        <img src="/images/twitter.png" rel="me" style="width: 44px; height: 44px;" />
       </a>
       </li>
       <li class="divider"></li>
-      <li class=""><a href="https://github.com/LupineDev"><img src="/images/github.png" style="width: 34px; height: 34px; margin: 5px 0 5px 0;" /></a></li>
+      <li class=""><a href="https://github.com/LupineDev" rel="me"><img src="/images/github.png" style="width: 34px; height: 34px; margin: 5px 0 5px 0;" /></a></li>
       <li class="divider"></li>
       <li class="has-dropdown"><a href="">Hawaii Tech</a>
         <ul class="dropdown">
@@ -67,20 +67,26 @@
 </div>
 <div class="row">
   <div class="large-10 small-12 columns">
-    <p>This was the <strong>one</strong> post I made on my tumblr blog. Since it looked kind of lonely up there I thought I would bring it over&#8230;</p>
+    <p>This was the <strong>one</strong> post I made on my tumblr blog. Since it looked kind of lonely up there I thought I would bring it over</p>
 
-<p>I had quite a bit of a headache trying to get the MySQL ruby gem working on Snow Leopard. Every time I would try to migrate my database or start Mongrel I would get &#8220;NameError (uninitialized constant MysqlCompat::MysqlRes)&#8221;.</p>
+<p>I had quite a bit of a headache trying to get the MySQL ruby gem working on Snow Leopard. Every time I would try to migrate my database or start Mongrel I would get “NameError (uninitialized constant MysqlCompat::MysqlRes)”.</p>
 
 <p>After doing some googling I found the ruby weblog guide for upgrading to Snow Leopard. There they recommend installing the 64 bit version of MySQL and then to install the gem run the following command:</p>
 <div class='highlight'><pre><code class='bash'><span class='nv'>$ </span>sudo env <span class='nv'>ARCHFLAGS</span><span class='o'>=</span><span class='s2'>&quot;-arch x86_64&quot;</span> gem install mysql -- --with-mysql-config<span class='o'>=</span>/usr/local/mysql/bin/mysql_config
-</code></pre></div><br />
+</code></pre></div>
+<p><br /></p>
+
 <p>MySQL and the gem installed ok but I would still get the same error when trying to migrate or start the development server. A little more googling led me to Robby Grossman’s blog with instructions for installing MySQL using macports and a slightly different command for installing the gem. To install MySQL with macports:</p>
 <div class='highlight'><pre><code class='bash'><span class='nv'>$ </span>sudo port install mysql5-devel
 <span class='nv'>$ </span>sudo /opt/local/lib/mysql5/mysql_install_db -user<span class='o'>=</span>mysql
-</code></pre></div><br />
+</code></pre></div>
+<p><br /></p>
+
 <p>Then I combined his instructions for installing the gem with the one on the ruby weblog.</p>
 <div class='highlight'><pre><code class='bash'><span class='nv'>$ </span>sudo env <span class='nv'>ARCHFLAGS</span><span class='o'>=</span><span class='s2'>&quot;-arch x86_64&quot;</span> gem install mysql -- --with-mysql-config<span class='o'>=</span>/usr/local/mysql/bin/mysql_config
-</code></pre></div><br />
+</code></pre></div>
+<p><br /></p>
+
 <p>Hope this helps, Good luck!</p>
   </div>
   <div class="large-2 small-12 columns">
