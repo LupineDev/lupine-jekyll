@@ -1,3 +1,4 @@
 source: .
 timezone: America/Hawaii
 pygments: true
+destination: ./docs/
