@@ -67,22 +67,38 @@
 </div>
 <div class="row">
   <div class="large-10 small-12 columns">
-    <p>For the current project I am working on we are using the <a href="https://github.com/jnicklas/carrierwave">CarrierWave</a> gem as an upload solution for users to upload files. It is a great solution for uploading files to your rails that allows you to specify “versions” of uploaded images that are cropped and/or resized to the width/height you need. This is a great feature for creating thumbnails or other precise image sizes that was needed for this project. Unfortunately we needed the users to be able to have this single CarrierWave “uploader” to upload many differenty file types of files not just images.</p>
+    <p>For the current project I am working on we are using the
+<a href="https://github.com/jnicklas/carrierwave">CarrierWave</a> gem as an upload
+solution for users to upload files. It is a great solution for uploading
+files to your rails that allows you to specify “versions” of uploaded
+images that are cropped and/or resized to the width/height you need.
+This is a great feature for creating thumbnails or other precise image
+sizes that was needed for this project. Unfortunately we needed the
+users to be able to have this single CarrierWave “uploader” to upload
+many differenty file types of files not just images.</p>
 
-<p>Because the versions are applied to all uploads you don’t want or need multiple versions of the same spreadsheet or audio file. I have forked CarrierWave on github and tweaked the 0.4-stable branch to detect the content type and not cache, process or store versions of files that aren’t image files. On this branch <strong>only uploads from the browser are versioned.</strong></p>
+<p>Because the versions are applied to all uploads you don’t want or need
+multiple versions of the same spreadsheet or audio file. I have forked
+CarrierWave on github and tweaked the 0.4-stable branch to detect the
+content type and not cache, process or store versions of files that
+aren’t image files. On this branch <strong>only uploads from the browser are
+versioned.</strong></p>
 
-<p>If you are using a rails 2.3.x app and selective versioning sounds like it would be useful to you, check out <a href="https://github.com/LupineDev/carrierwave/tree/0.4-selective_versioning">https://github.com/LupineDev/carrierwave/tree/0.4-selective_versioning</a></p>
+<p>If you are using a rails 2.3.x app and selective versioning sounds like
+it would be useful to you, check out
+<a href="https://github.com/LupineDev/carrierwave/tree/0.4-selective_versioning">https://github.com/LupineDev/carrierwave/tree/0.4-selective_versioning</a></p>
 
 <p>First uninstall the old version of carrierwave and then wget/download/clone my git repository, build the gem and install it.</p>
-<div class='highlight'><pre><code class='bash'><span class='nv'>$ </span><span class='nb'>cd </span>path/to/download/carrierwave/
-<span class='nv'>$ </span>gem build carrierwave.gemspec
-<span class='nv'>$ </span>gem install carrierwave-0.4.10
-</code></pre></div>
-<p><br /></p>
 
-<p><br /></p>
+<figure class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="nv">$ </span><span class="nb">cd </span>path/to/download/carrierwave/
+<span class="nv">$ </span>gem build carrierwave.gemspec
+<span class="nv">$ </span>gem <span class="nb">install </span>carrierwave-0.4.10</code></pre></figure>
+
+<p><br />
+<br /></p>
 
 <p>Good luck, hopefully some of you find it useful too.</p>
+
   </div>
   <div class="large-2 small-12 columns">
     <ul class="side-nav">

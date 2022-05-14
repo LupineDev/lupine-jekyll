@@ -61,7 +61,7 @@
 <div class="row">
   <div class="large-12 small-12 columns">
     <ul class="breadcrumbs">
-      <li class="current">Posted On: 06 Oct 2012</li>
+      <li class="current">Posted On: 10 Jun 2012</li>
     </ul>
   </div>
 </div>
@@ -71,21 +71,36 @@
 
 <p>I know “Microsoft” is not the first word that comes mind when you’re writing a ruby application but since Google dropped the free tier for their translation service the Microsoft Translator API is a good alternative for a small/personal project that you don’t want to have to bother with the monthly bill.</p>
 
-<p>Recently I’ve had to use this API in a project and this weekend I extracted the functionality out into a simple gem. I present to you (queue applause) <a href="https://github.com/ikayzo/microsoft_translator">microsoft_translator</a></p>
+<p>Recently I’ve had to use this API in a project and this weekend I
+extracted the functionality out into a simple gem.  I present to you
+ (queue applause) <a href="https://github.com/ikayzo/microsoft_translator">microsoft_translator</a></p>
 
-<p>Before translating things from your ruby application you first need to sign up for the Microsoft Translator API in the Windows <a href="https://datamarket.azure.com/dataset/1899a118-d202-492c-aa16-ba21c3">Azure Datamarket</a></p>
+<p>Before translating things from your ruby application you first need to
+sign up for the Microsoft Translator API in the Windows <a href="https://datamarket.azure.com/dataset/1899a118-d202-492c-aa16-ba21c3">Azure
+Datamarket</a></p>
 
-<p>Also, you shouldn’t stress about what to put for the <strong>Redirect URI</strong>. For the purposes of this gem you won’t be using it so your project’s homepage will work just fine. You’ll use the <strong>Client ID</strong> and <strong>Client secret</strong> to authenticate your requests to the API. Once this is done you’ll install it like you would any other gem</p>
+<p>Also, you shouldn’t stress about what to put for the <strong>Redirect URI</strong>. For
+the purposes of this gem you won’t be using it so your project’s
+homepage will work just fine. You’ll use the <strong>Client ID</strong> and <strong>Client
+secret</strong> to authenticate your requests to the API. Once this is done you’ll
+install it like you would any other gem…</p>
 
-<p>First create a MicrosoftTranslator::Client with your Client ID &amp; secret. To translate pass in the foreign text allong with the language codes for the language you are going from/to and the content type. The content type is either “text/plain” or “text/html”</p>
-<div class='highlight'><pre><code class='ruby'><span class='n'>translator</span> <span class='o'>=</span> <span class='no'>MicrosoftTranslator</span><span class='o'>::</span><span class='no'>Client</span><span class='o'>.</span><span class='n'>new</span><span class='p'>(</span><span class='s1'>&#39;your_client_id&#39;</span><span class='p'>,</span> <span class='s1'>&#39;your_client_secret&#39;</span><span class='p'>)</span>
-<span class='n'>spanish</span> <span class='o'>=</span> <span class='s2'>&quot;hasta luego muchacha&quot;</span><span class='n'>translator</span><span class='o'>.</span><span class='n'>translate</span><span class='p'>(</span><span class='n'>spanish</span><span class='p'>,</span><span class='s2'>&quot;es&quot;</span><span class='p'>,</span><span class='s2'>&quot;en&quot;</span><span class='p'>,</span><span class='s2'>&quot;text/html&quot;</span><span class='p'>)</span>
+<p>First create a MicrosoftTranslator::Client with your Client ID &amp; secret.
+To translate pass in the foreign text allong with the language codes for
+the language you are going from/to and the content type. The content
+type is either “text/plain” or “text/html”</p>
 
-<span class='c1'># =&gt;  &quot;until then girl&quot;</span>
-</code></pre></div>
+<figure class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="n">translator</span> <span class="o">=</span> <span class="no">MicrosoftTranslator</span><span class="o">::</span><span class="no">Client</span><span class="p">.</span><span class="nf">new</span><span class="p">(</span><span class="s1">'your_client_id'</span><span class="p">,</span> <span class="s1">'your_client_secret'</span><span class="p">)</span>
+<span class="n">spanish</span> <span class="o">=</span> <span class="s2">"hasta luego muchacha"</span><span class="n">translator</span><span class="p">.</span><span class="nf">translate</span><span class="p">(</span><span class="n">spanish</span><span class="p">,</span><span class="s2">"es"</span><span class="p">,</span><span class="s2">"en"</span><span class="p">,</span><span class="s2">"text/html"</span><span class="p">)</span>
+
+<span class="c1"># =&gt;  "until then girl"</span></code></pre></figure>
+
 <p><br /></p>
 
-<p>That’s about it! This is a list of the supported languages by the <a href="http://www.microsofttranslator.com/help/?FORM=R5FD">Microsoft Translate API</a> and here are all the language codes as a <a href="http://www.loc.gov/standards/iso639-2/php/code_list.php">helpful reference</a>.</p>
+<p>That’s about it! This is a list of the supported languages by the
+<a href="http://www.microsofttranslator.com/help/?FORM=R5FD">Microsoft Translate API</a> and here are all the
+language codes as a <a href="http://www.loc.gov/standards/iso639-2/php/code_list.php">helpful reference</a>.</p>
+
   </div>
   <div class="large-2 small-12 columns">
     <ul class="side-nav">

@@ -67,28 +67,41 @@
 </div>
 <div class="row">
   <div class="large-10 small-12 columns">
-    <p>In a project this week I had send some http requests from a ruby program and do something with the response. One of the requests needed to be https so I tried something along these lines</p>
-<div class='highlight'><pre><code class='ruby'><span class='nb'>require</span> <span class='s2'>&quot;net/https&quot;</span>
-<span class='nb'>require</span> <span class='s2'>&quot;uri&quot;</span>
+    <p>In a project this week I had send some http requests from a ruby program
+and do something with the response.  One of the requests needed to be
+https so I tried something along these lines…</p>
 
-<span class='n'>uri</span> <span class='o'>=</span> <span class='no'>URI</span><span class='o'>.</span><span class='n'>parse</span><span class='p'>(</span><span class='s2'>&quot;https://secure.com/&quot;</span><span class='p'>)</span>
-<span class='n'>http</span> <span class='o'>=</span> <span class='no'>Net</span><span class='o'>::</span><span class='no'>HTTP</span><span class='o'>.</span><span class='n'>new</span><span class='p'>(</span><span class='n'>uri</span><span class='o'>.</span><span class='n'>host</span><span class='p'>,</span> <span class='n'>uri</span><span class='o'>.</span><span class='n'>port</span><span class='p'>)</span>
-<span class='n'>response</span> <span class='o'>=</span> <span class='n'>http</span><span class='o'>.</span><span class='n'>request</span><span class='p'>(</span><span class='n'>request</span><span class='p'>)</span>
-</code></pre></div>
+<figure class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="nb">require</span> <span class="s2">"net/https"</span>
+<span class="nb">require</span> <span class="s2">"uri"</span>
+
+<span class="n">uri</span> <span class="o">=</span> <span class="no">URI</span><span class="p">.</span><span class="nf">parse</span><span class="p">(</span><span class="s2">"https://secure.com/"</span><span class="p">)</span>
+<span class="n">http</span> <span class="o">=</span> <span class="no">Net</span><span class="o">::</span><span class="no">HTTP</span><span class="p">.</span><span class="nf">new</span><span class="p">(</span><span class="n">uri</span><span class="p">.</span><span class="nf">host</span><span class="p">,</span> <span class="n">uri</span><span class="p">.</span><span class="nf">port</span><span class="p">)</span>
+<span class="n">response</span> <span class="o">=</span> <span class="n">http</span><span class="p">.</span><span class="nf">request</span><span class="p">(</span><span class="n">request</span><span class="p">)</span></code></pre></figure>
+
 <p><br /></p>
 
-<p>This looks like it should work right? When URI parses the https url it even knows to use the https port</p>
-<div class='highlight'><pre><code class='ruby'><span class='n'>uri</span><span class='o'>.</span><span class='n'>port</span>
-<span class='c1'># =&gt; 443</span>
-</code></pre></div>
+<p>This looks like it should work right? When URI parses the https url it
+even knows to use the https port…</p>
+
+<figure class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="n">uri</span><span class="p">.</span><span class="nf">port</span>
+<span class="c1"># =&gt; 443</span></code></pre></figure>
+
 <p><br /></p>
 
-<p>Only the request kept timing out and I didn’t know why. After some googleling and rereading parts of blog posts I had previously overlooked my salvation came from a very helpful post by <a href="http://www.rubyinside.com/nethttp-cheat-sheet-2940.html">August Lilleaas</a>. Even though the parsed URI object recognized the https port the http request still has to be told to send as https. You can set this with an option called “user_ssl”</p>
-<div class='highlight'><pre><code class='ruby'><span class='n'>http</span><span class='o'>.</span><span class='n'>use_ssl</span> <span class='o'>=</span> <span class='kp'>true</span>
-</code></pre></div>
+<p>Only the request kept timing out and I didn’t know why. After some
+googleling and rereading parts of blog posts I had previously overlooked
+my salvation came from a very helpful post by <a href="http://www.rubyinside.com/nethttp-cheat-sheet-2940.html">August Lilleaas</a>.  Even
+though the parsed URI object recognized the https port the http request
+still has to be told to send as https.  You can set this with an option
+called “user_ssl”</p>
+
+<figure class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="n">http</span><span class="p">.</span><span class="nf">use_ssl</span> <span class="o">=</span> <span class="kp">true</span></code></pre></figure>
+
 <p><br /></p>
 
 <p>No more ambiguous timout :)</p>
+
+
   </div>
   <div class="large-2 small-12 columns">
     <ul class="side-nav">

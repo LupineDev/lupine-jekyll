@@ -67,34 +67,47 @@
 </div>
 <div class="row">
   <div class="large-10 small-12 columns">
-    <p>This post is just a friendly reminder for those that practice TDD/BDD to make sure they are not putting more ceremony into their tests than is necessary. Use mocks and stubs instead!</p>
+    <p>This post is just a friendly reminder for those that practice TDD/BDD to
+make sure they are not putting more ceremony into their tests than is
+necessary.  Use mocks and stubs instead!</p>
 
-<p>Mocks are just stand-ins that behave like the thing we want it to represent. Stubs will fake a method call and return a canned response. These save time both in setting up the test and in running it (depending on if your real objects are persisted in a test database). When you test a method you should only test things the method is actually <strong>doing</strong>.</p>
+<p>Mocks are just stand-ins that behave like the thing we want it to
+represent.  Stubs will fake a method call and return a canned response.
+These save time both in setting up the test and in running it (depending
+on if your real objects are persisted in a test database).  When you
+test a method you should only test things the method is actually <strong>doing</strong>.</p>
 
-<p>I’m going to use Ruby on Rails and RSpec as an example. A classic situation is that we have an e-commerce application with a Order model that has many ShopItems. Now all we need to test that a cart object will calculate it’s total as the sum of the prices of all of its ShopItems. We don’t care what the names of the items are or if they are actually stored in the database.</p>
-<div class='highlight'><pre><code class='ruby'><span class='n'>describe</span> <span class='no'>Order</span> <span class='k'>do</span>
-  <span class='n'>describe</span> <span class='s2'>&quot;#sub_total&quot;</span> <span class='k'>do</span>
-    <span class='c1'># writing everything to db</span>
-    <span class='n'>it</span> <span class='s2'>&quot;should calculate the sum of all of its shop_items&quot;</span> <span class='k'>do</span>
-      <span class='n'>order</span> <span class='o'>=</span> <span class='no'>Order</span><span class='o'>.</span><span class='n'>create</span><span class='p'>(</span><span class='n'>some_options</span><span class='p'>)</span>
-      <span class='mi'>3</span><span class='o'>.</span><span class='n'>times</span> <span class='k'>do</span>
-        <span class='n'>order</span><span class='o'>.</span><span class='n'>shop_items</span> <span class='o'>&lt;&lt;</span> <span class='no'>ShopItem</span><span class='o'>.</span><span class='n'>create</span><span class='p'>(</span><span class='ss'>:price</span> <span class='o'>=&gt;</span> <span class='mi'>2</span><span class='o'>.</span><span class='mo'>00</span><span class='p'>)</span>
-      <span class='k'>end</span>
-      <span class='n'>order</span><span class='o'>.</span><span class='n'>subtotal</span><span class='o'>.</span><span class='n'>should</span> <span class='n'>be_within</span><span class='p'>(</span><span class='mi'>0</span><span class='o'>.</span><span class='mo'>01</span><span class='p'>)</span><span class='o'>.</span><span class='n'>of</span><span class='p'>(</span><span class='mi'>6</span><span class='o'>.</span><span class='mi'>0</span><span class='p'>)</span>
-    <span class='k'>end</span>
-    <span class='c1'>#  mocking</span>
-    <span class='n'>it</span> <span class='s2'>&quot;should calculate the sum of all of its shop_items&quot;</span> <span class='k'>do</span>
-      <span class='n'>order</span> <span class='o'>=</span> <span class='no'>Order</span><span class='o'>.</span><span class='n'>create</span><span class='p'>(</span><span class='n'>some_options</span><span class='p'>)</span>
-      <span class='n'>fake_items</span> <span class='o'>=</span> <span class='o'>[</span><span class='n'>stub</span><span class='p'>(</span><span class='ss'>:price</span> <span class='o'>=&gt;</span> <span class='mi'>2</span><span class='o'>.</span><span class='mo'>00</span><span class='p'>),</span> <span class='n'>stub</span><span class='p'>(</span><span class='ss'>:price</span> <span class='o'>=&gt;</span> <span class='mi'>2</span><span class='o'>.</span><span class='mo'>00</span><span class='p'>),</span> <span class='n'>stub</span><span class='p'>(</span><span class='ss'>:price</span> <span class='o'>=&gt;</span> <span class='mi'>2</span><span class='o'>.</span><span class='mo'>00</span><span class='p'>)</span><span class='o'>]</span>
-      <span class='n'>order</span><span class='o'>.</span><span class='n'>stub!</span><span class='p'>(</span><span class='ss'>:shop_items</span><span class='p'>)</span><span class='o'>.</span><span class='n'>and_return</span><span class='p'>(</span><span class='n'>fake_items</span><span class='p'>)</span>
-      <span class='n'>order</span><span class='o'>.</span><span class='n'>subtotal</span><span class='o'>.</span><span class='n'>should</span> <span class='n'>be_within</span><span class='p'>(</span><span class='mi'>0</span><span class='o'>.</span><span class='mo'>01</span><span class='p'>)</span><span class='o'>.</span><span class='n'>of</span><span class='p'>(</span><span class='mi'>6</span><span class='o'>.</span><span class='mi'>0</span><span class='p'>)</span>
-    <span class='k'>end</span>
-  <span class='k'>end</span>
-<span class='k'>end</span>
-</code></pre></div>
+<p>I’m going to use Ruby on Rails and RSpec as an example.  A classic
+situation is that we have an e-commerce application with a Order model
+that has many ShopItems.  Now all we need to test that a cart object
+will calculate it’s total as the sum of the prices of all of its
+ShopItems.  We don’t care what the names of the items are or if they are
+actually stored in the database.</p>
+
+<figure class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="n">describe</span> <span class="no">Order</span> <span class="k">do</span>
+  <span class="n">describe</span> <span class="s2">"#sub_total"</span> <span class="k">do</span>
+    <span class="c1"># writing everything to db</span>
+    <span class="n">it</span> <span class="s2">"should calculate the sum of all of its shop_items"</span> <span class="k">do</span>
+      <span class="n">order</span> <span class="o">=</span> <span class="no">Order</span><span class="p">.</span><span class="nf">create</span><span class="p">(</span><span class="n">some_options</span><span class="p">)</span>
+      <span class="mi">3</span><span class="p">.</span><span class="nf">times</span> <span class="k">do</span>
+        <span class="n">order</span><span class="p">.</span><span class="nf">shop_items</span> <span class="o">&lt;&lt;</span> <span class="no">ShopItem</span><span class="p">.</span><span class="nf">create</span><span class="p">(</span><span class="ss">:price</span> <span class="o">=&gt;</span> <span class="mf">2.00</span><span class="p">)</span>
+      <span class="k">end</span>
+      <span class="n">order</span><span class="p">.</span><span class="nf">subtotal</span><span class="p">.</span><span class="nf">should</span> <span class="n">be_within</span><span class="p">(</span><span class="mf">0.01</span><span class="p">).</span><span class="nf">of</span><span class="p">(</span><span class="mf">6.0</span><span class="p">)</span>
+    <span class="k">end</span>
+    <span class="c1">#  mocking</span>
+    <span class="n">it</span> <span class="s2">"should calculate the sum of all of its shop_items"</span> <span class="k">do</span>
+      <span class="n">order</span> <span class="o">=</span> <span class="no">Order</span><span class="p">.</span><span class="nf">create</span><span class="p">(</span><span class="n">some_options</span><span class="p">)</span>
+      <span class="n">fake_items</span> <span class="o">=</span> <span class="p">[</span><span class="n">stub</span><span class="p">(</span><span class="ss">:price</span> <span class="o">=&gt;</span> <span class="mf">2.00</span><span class="p">),</span> <span class="n">stub</span><span class="p">(</span><span class="ss">:price</span> <span class="o">=&gt;</span> <span class="mf">2.00</span><span class="p">),</span> <span class="n">stub</span><span class="p">(</span><span class="ss">:price</span> <span class="o">=&gt;</span> <span class="mf">2.00</span><span class="p">)]</span>
+      <span class="n">order</span><span class="p">.</span><span class="nf">stub!</span><span class="p">(</span><span class="ss">:shop_items</span><span class="p">).</span><span class="nf">and_return</span><span class="p">(</span><span class="n">fake_items</span><span class="p">)</span>
+      <span class="n">order</span><span class="p">.</span><span class="nf">subtotal</span><span class="p">.</span><span class="nf">should</span> <span class="n">be_within</span><span class="p">(</span><span class="mf">0.01</span><span class="p">).</span><span class="nf">of</span><span class="p">(</span><span class="mf">6.0</span><span class="p">)</span>
+    <span class="k">end</span>
+  <span class="k">end</span>
+<span class="k">end</span></code></pre></figure>
+
 <p><br /></p>
 
 <p>Origninally posted on <a href="http://www.techhui.com/profiles/blogs/are-you-mocking-me-you-should-be">TechHui</a></p>
+
   </div>
   <div class="large-2 small-12 columns">
     <ul class="side-nav">

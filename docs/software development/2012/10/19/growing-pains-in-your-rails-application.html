@@ -67,27 +67,49 @@
 </div>
 <div class="row">
   <div class="large-10 small-12 columns">
-    <p>If you have been part of building an application that has lasted longer than a month then you’ve probably had some troubles as the project grows. Business logic requirements get more and more complicated. Features change direction. You occasionally “hack” something just to satisfy a release or an urgent bug fix, saying “I can refactor/clean this up this later…”</p>
+    <p>If you have been part of building an application that has lasted longer
+than a month then you’ve probably had some troubles as the project
+grows.   Business logic requirements get more and more complicated.
+Features change direction.  You occasionally “hack” something just to
+satisfy a release or an urgent bug fix, saying “I can refactor/clean
+this up this later…”</p>
 
-<p>Then one day “later…” is now. New features are getting harder and harder to implement. Everything seems intricately related and you can’t change one part of the app without the effects showing up somewhere else as bugs three weeks after the change was released.</p>
+<p>Then one day “later…” is now.  New features are getting harder and
+harder to implement.  Everything seems intricately related and you can’t
+change one part of the app without the effects showing up somewhere else
+as bugs three weeks after the change was released.</p>
 
-<p>Usually it starts when longer logic starts showing up in your controller methods to fit the requirements. Once you notice, you start moving the behavior logic into the models to fit the “fat-model skinny-controller” best practice. Which is good but it can only take you so far. Sooner or later the models get too bloated, and complex.</p>
+<p>Usually it starts when longer logic starts showing up in your controller
+methods to fit the requirements.  Once you notice, you start moving the
+behavior logic into the models to fit the “fat-model skinny-controller”
+best practice.  Which is good but it can only take you so far.  Sooner
+or later the models get too bloated, and complex.</p>
 
-<p>Is there a way to get back out of this? Bryan Helmkamp wrote a really great blog post <a href="http://blog.codeclimate.com/blog/2012/10/17/7-ways-to-decompose-fat-activerecord-models/">7 Patterns to Refactor Fat ActiveRecord Models</a> This post was incredibly helpful. I’ve felt this pain on projects but didn’t really know how I could make it better. The solutions make it easier to spot and group pieces that can be extracted out into their own classes.</p>
+<p>Is there a way to get back out of this?  Bryan Helmkamp wrote a really
+great blog post <a href="http://blog.codeclimate.com/blog/2012/10/17/7-ways-to-decompose-fat-activerecord-models/">7 Patterns to Refactor Fat ActiveRecord Models</a> This post
+was incredibly helpful. I’ve felt this pain on projects but didn’t
+really know how I could make it better.  The solutions make it easier to
+spot and group pieces that can be extracted out into their own classes.</p>
 
-<p>Another issue is how do you know you’re in pain? Often these problems arise organically over a long period of time. By the time you become aware, it already feels like there is no hope. Static analysis and <a href="http://rubyrogues.com/041-rr-code-metrics/">code metrics</a> are a great way to pick up on these issues before they require weeks to extract and refactor. Bryan is also founder of <a href="https://codeclimate.com/">Code Climate</a> a very high quality code metric PaaS for ruby projects. Being aware of and dealing with code smells earlier saves you time and money throughout the life of the project.</p>
+<p>Another issue is how do you know you’re in pain?  Often these problems
+arise organically over a long period of time.  By the time you become
+aware, it already feels like there is no hope. Static analysis and <a href="http://rubyrogues.com/041-rr-code-metrics/">code metrics</a>
+are a great way to pick up on these issues before they require
+weeks to extract and refactor.  Bryan is also founder of <a href="https://codeclimate.com/">Code Climate</a> a
+very high quality code metric PaaS for ruby projects.  Being aware of
+and dealing with code smells earlier saves you time and money throughout
+the life of the project.</p>
 
 <p>These are some recommended Rails &amp; OOP books that are next up in my queue of tech things to read</p>
 
 <ul>
-<li><a href="http://objectsonrails.com/">Objects on Rails</a> by Avdi Grimm</li>
-
-<li><a href="http://www.poodr.info/">Practical Object-Oriented Design in Ruby</a> by Sandi Metz</li>
-
-<li><a href="http://www.growing-object-oriented-software.com/">Growing Object-Oriented Software Guided by Tests</a> by Steve Freeman &amp; Nat Pryce</li>
+  <li><a href="http://objectsonrails.com/">Objects on Rails</a> by Avdi Grimm</li>
+  <li><a href="http://www.poodr.info/">Practical Object-Oriented Design in Ruby</a> by Sandi Metz</li>
+  <li><a href="http://www.growing-object-oriented-software.com/">Growing Object-Oriented Software Guided by Tests</a> by Steve Freeman &amp; Nat Pryce</li>
 </ul>
 
 <p>Origninally posted on <a href="http://www.techhui.com/profiles/blogs/growing-pains-in-your-rails-applicaiton">TechHui</a></p>
+
   </div>
   <div class="large-2 small-12 columns">
     <ul class="side-nav">

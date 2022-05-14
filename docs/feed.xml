@@ -1,0 +1,548 @@
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.2.2">Jekyll</generator><link href="/feed.xml" rel="self" type="application/atom+xml" /><link href="/" rel="alternate" type="text/html" /><updated>2022-05-14T09:45:39+00:00</updated><id>/feed.xml</id><entry><title type="html">Maintaining Skill Momentum</title><link href="/software%20development/2013/09/04/maintaining-skill-momentum.html" rel="alternate" type="text/html" title="Maintaining Skill Momentum" /><published>2013-09-04T00:00:00+00:00</published><updated>2013-09-04T00:00:00+00:00</updated><id>/software%20development/2013/09/04/maintaining-skill-momentum</id><content type="html" xml:base="/software%20development/2013/09/04/maintaining-skill-momentum.html"><![CDATA[<p>Whatever profession you are a part of it requires some set of skills in order to accomplish.  The skill is useful, or at least someone thinks it’s valuable enough to pay you to perform it. At the beginning of your career you are learning many new things every day.  Your new job/project constantly pushes the boundaries of your experience.  As time progresses and you become able to perform your job with less assistance from mentors and co-workers. The great initial momentum at which you learn new skills and refine existing ones begins to peter out. This is not guaranteed to happen, but it gets harder to find time to really focus on improving your craft. It’s something I’ve found myself struggling with this past year.</p>
+
+<p>In the technology industry this is more important than most.  If the is organization you work for is smart they’ll invest some time &amp; money into skill development of their employees. Maybe it’s bringing in consultants to give training, lunch &amp; learn sessions or sending employees to attend conferences. All of those are awesome!  …but usually they are not enough by themselves, things are just changing too rapidly.  Even if the tools &amp; processes you work with are not shifting as fast as other areas of the industry, there is almost always something you could do to hone your skill.</p>
+
+<p>For starters, I think it’s most important to do this at a sustainable pace.  Doing something (even if it’s tiny) to learn more is always better than nothing.  Also, much it’s easier to find time and energy to undertake little exercises than it is to try and attempt something larger and more intensive.  Here are some different bit-sized things you can try to help get you back on track with personal skill development.</p>
+
+<ul>
+  <li>Follow an author you respect: Either on twitter or their personal page/blog. A great place to start, especially if you are not too familiar with the public development community of your favourite languages &amp; technologies. Find an author of a good technical book you’ve read (or just heard about from friends &amp; colleagues).  See who/what they talk about and learn more about it.</li>
+  <li>Subscribe to some podcasts:  Find one that talks about the skills/tools that pertain to your job.  This is a great way to hear about new and different things in your field.  As a ruby developer I would highly recommend the <a href="http://rubyrogues.com/">Ruby Rogues</a>,  <a href="http://ruby5.envylabs.com/">Ruby5</a>, and the <a href="http://rubyshow.com/">Ruby Show</a>.</li>
+  <li>Find an aggregator site for your language: These are “blogs” or sites that are dedicated to collecting and linking to useful articles that have to deal with a certain language or technology (Ruby examples: <a href="http://www.rubyflow.com/">Rubyflow</a>, <a href="http://www.rubyflow.com/">Ruby Inside</a>, <a href="http://www.sitepoint.com/">Sitepoint</a>)</li>
+  <li>Browse/Join online communites:  Join a forum that is dedicated to your languages.  Ask/answer questions, or just lurk. Learn what topics are touchy or highly contested and how spot users that are not constructive. <a href="http://stackoverflow.com/">Stack Overflow</a> and <a href="http://www.techhui.com/">TechHui</a> are some good general places for this.</li>
+  <li>Practice personal retrospectives:  Simply take some time at the end of of your day or week to reflect on how you performed.  What you thought was good or any place you could improve tomorrow is great data you can use to help yourself improve.  Perhaps write them down on a sticky note as a reminder for the following day.</li>
+</ul>
+
+<p>These are just a few suggestions I am attempting to practice with greater regularity.  Listening to a podcast during breakfast or during your commute.  Reading an informative blog post while you are blocked and waiting for feedback from a co-worker.  Attending a meetup some evening you are free… Individually they don’t take much time but their cumulative effect over a month, a year can add up to a lot more than you would expect.</p>]]></content><author><name></name></author><category term="software development" /><category term="productivity" /><category term="professional development" /><summary type="html"><![CDATA[Whatever profession you are a part of it requires some set of skills in order to accomplish. The skill is useful, or at least someone thinks it’s valuable enough to pay you to perform it. At the beginning of your career you are learning many new things every day. Your new job/project constantly pushes the boundaries of your experience. As time progresses and you become able to perform your job with less assistance from mentors and co-workers. The great initial momentum at which you learn new skills and refine existing ones begins to peter out. This is not guaranteed to happen, but it gets harder to find time to really focus on improving your craft. It’s something I’ve found myself struggling with this past year.]]></summary></entry><entry><title type="html">Be “social” but also show your users you care about their privacy</title><link href="/software%20development/2013/07/05/be-social-but-also-show-your-users-you-care-about-their-privacy.html" rel="alternate" type="text/html" title="Be “social” but also show your users you care about their privacy" /><published>2013-07-05T00:00:00+00:00</published><updated>2013-07-05T00:00:00+00:00</updated><id>/software%20development/2013/07/05/be-social-but-also-show-your-users-you-care-about-their-privacy</id><content type="html" xml:base="/software%20development/2013/07/05/be-social-but-also-show-your-users-you-care-about-their-privacy.html"><![CDATA[<p>Recent events like the leaking of PRISM have reinvigorated the concerns
+of many for their privacy online.  This is a broad subject, and I am by
+no means a security expert, but I would to talk about an easy way to
+give a little control back to your users.</p>
+
+<p>It’s virtually impossible these days to visit a web page without seeing
+several social media “share” buttons/widgets.  Making it ridiculously
+easy for your users to send your page to their favourite social
+twitbookfacegramsnapspace is an effective way to boost traffic and gain
+visibility.  The problem with these widgets is that they are helping the
+social networks <a href="http://news.cnet.com/8301-13578_3-20006532-38.html">track your user’s browsing history</a> even if they don’t
+“like” or “share” the button on your web page. In addition to tracking
+your users, it also can expose them to more <a href="http://news.cnet.com/8301-13578_3-20006532-38.html">security vulnerabilities</a> on
+public wifi networks.</p>
+
+<p>The speed and breadth at which information can propagate across the
+social web is one of the most powerful effects of the internet. Despite
+the concerns mentioned above, I still think that users should be able to
+easily “share” a page on their social network(s) of choice <strong>if they
+choose to do so</strong>. My problem with the standard widgets provided by social
+networks is that they do not give users a chance to opt-out.</p>
+
+<p>Enter <a href="http://panzi.github.io/SocialSharePrivacy/">Social Share Privacy</a>.  This is a way to put social widgets on your
+site but allow your users to opt-in to them.  No data is sent to the
+social network unless the user makes a conscious decision to allow it.
+The way it works is the widgets are displayed but they are greyed out.
+Only if the user clicks on the widget will any data be sent to the
+social network. In addition to putting a small bit of privacy back in
+your user’s hands it also draws attention to the concerns that these
+widgets present. Most users are probably unaware that the widgets are
+reporting activity to the networks just by them visiting the page.</p>
+
+<p><img src="http://9a6b3d25fbd39dfd6920-37d0972e62b1cfc05ea05a81768e1191.r69.cf2.rackcdn.com/social_share_example.png" alt="social share example" /></p>
+
+<p>If you would like to learn more about what you can do to decrease the
+number of companies/parties that are notified of your browsing activity
+I highly suggest checking out <a href="http://fixtracking.com/">fixtracking.com</a></p>
+
+<p>Origninally posted on <a href="http://www.techhui.com/profiles/blogs/be-social-but-also-show-your-users-you-care-about-their-privacy">TechHui</a></p>]]></content><author><name></name></author><category term="software development" /><category term="social widgets" /><category term="privacy" /><summary type="html"><![CDATA[Recent events like the leaking of PRISM have reinvigorated the concerns of many for their privacy online. This is a broad subject, and I am by no means a security expert, but I would to talk about an easy way to give a little control back to your users.]]></summary></entry><entry><title type="html">Write You’re Own eBook in Markdown with Ruby and Github Pages</title><link href="/software%20development/writing/2013/03/25/write-your-own-ebook-in-markdown-with-ruby-and-github-pages.html" rel="alternate" type="text/html" title="Write You’re Own eBook in Markdown with Ruby and Github Pages" /><published>2013-03-25T00:00:00+00:00</published><updated>2013-03-25T00:00:00+00:00</updated><id>/software%20development/writing/2013/03/25/write-your-own-ebook-in-markdown-with-ruby-and-github-pages</id><content type="html" xml:base="/software%20development/writing/2013/03/25/write-your-own-ebook-in-markdown-with-ruby-and-github-pages.html"><![CDATA[<p><img src="http://9a6b3d25fbd39dfd6920-37d0972e62b1cfc05ea05a81768e1191.r69.cf2.rackcdn.com/cover.jpg" alt="wordsmith" /></p>
+
+<p>Many of us have either had the urge to write a book or spew some sort of
+long-winded excrement of words.  Maybe it’s a story that’s been bouncing
+around in your head, a piece of history you would like to document, or a
+coalescence of documentation/blog posts on a subject you are passionate
+about. Regardless of the reason they all require the same thing.  The
+ability to convert written text into a document or eBook format.</p>
+
+<p>Since I am a ruby developer I’ve gotten quite comfortable writing
+<a href="http://daringfireball.net/projects/markdown/">markdown</a> for documentation or general formatted text content. So the
+ability to compose the book in markdown that supports <a href="https://help.github.com/articles/github-flavored-markdown">Github style</a> code
+snippets is a big plus for me. After some brief searching I found ruby
+gem called <a href="https://github.com/tractical/wordsmith">wordsmith</a> that fit the bill pretty nicely with decent set of
+features.</p>
+
+<ul>
+  <li>Compose content in markdown with syntax highlighting for code snippets.</li>
+  <li>Simple <a href="https://github.com/tractical/wordsmith#usage">directory structure</a> that automatically generates the table of contents.</li>
+  <li>
+    <p>Generates eBooks in several popular formats</p>
+
+    <ul>
+      <li>HTML with styles that are easy to customize</li>
+      <li>epub</li>
+      <li>mobi (kindle)</li>
+      <li>pdf</li>
+    </ul>
+  </li>
+</ul>
+
+<p><strong>Note:</strong> The following example requires basic understanding of git/github, html &amp; css, how to use ruby/rubygems,  as well as the command line.</p>
+
+<p>Before installing maker sure to install the <a href="http://johnmacfarlane.net/pandoc/installing.html">pandoc</a> dependency listed in
+the <a href="https://github.com/tractical/wordsmith#installing">README</a>.  Don’t forget to install the LaTeX library listed in the
+pandoc install instructions if you would like to generate a pdf version.
+Also, <a href="http://www.amazon.com/gp/feature.html?ie=UTF8&amp;docId=1000234621">kindlegen</a> is required if mobi is one of your desired output
+formats.</p>
+
+<p>I’ve tested the gem using ruby 1.9.3-p392. It installs like any other gem:</p>
+
+<figure class="highlight"><pre><code class="language-bash" data-lang="bash">gem <span class="nb">install </span>wordsmith <span class="nt">--no-rdoc</span> <span class="nt">--no-ri</span></code></pre></figure>
+
+<p>To create a new ebook project simply follow the <a href="https://github.com/tractical/wordsmith#usage">usage</a> instructions
+outlined in the README.  The required structure of the chapters and
+subsections are shockingly straight forward.  Simply write all your
+content and generate it to the desired format.  The gem sets up a git
+repository for the book automatically so it is a good idea to store the
+progress of your work in incremental and contextually related git
+commits.</p>
+
+<p>Initially the stylesheet that is included is pretty simple but would be easy to override by someone who possesses a bit of CSS know-how.  A custom header/footer can also be added to the eBook by editing the respectively named html files in the layout folder.</p>
+
+<p>The wordsmith gem also includes a publish command. With this you can
+publish the html version of your eBook using <a href="https://help.github.com/categories/20/articles">github pages</a>.</p>
+
+<ol>
+  <li>Write and <a href="https://github.com/tractical/wordsmith#to-generate-your-book-in-different-formats">generate</a> your ebook in the html format</li>
+  <li>Commit to the master branch</li>
+  <li><a href="https://help.github.com/articles/create-a-repo">Create a repository</a> on github named for your ebook but don’t push
+anything to it. Also elect not to create a README file.</li>
+  <li>Update the .git/config file for the ebook git repository so the
+origin remote is referencing your new repository on github.</li>
+  <li>Run the command:</li>
+</ol>
+
+<figure class="highlight"><pre><code class="language-bash" data-lang="bash">    <span class="nv">$ </span>wordsmith publish git@github.com:your_github_username/your_ebook_repository_name.git
+  </code></pre></figure>
+
+<ol>
+  <li>If the publish command fails for some reason push it up manually with the command:</li>
+</ol>
+
+<figure class="highlight"><pre><code class="language-bash" data-lang="bash">    git push origin gh-pages:gh-pages
+  </code></pre></figure>
+
+<p>You can see an example I created based off the one wordsmith generates
+for every new project at <a href="http://lupinedev.github.com/wordsmith-example/">http://lupinedev.github.com/wordsmith-example/</a></p>
+
+<p>This is definitely a programmer’s approach to writing an eBook and
+probably not for everyone, but I found it to be an entertaining exercise
+that I might use in future.  I have not done too much research on the
+products/tools that already exist in the eBook-creating world but would
+be curious what other options people have found and what they think of
+them.</p>
+
+<p>Origninally posted on <a href="http://www.techhui.com/profiles/blogs/write-you-re-own-ebook-in-markdown-with-ruby-and-github-pages">TechHui</a></p>]]></content><author><name></name></author><category term="software development" /><category term="writing" /><category term="ruby" /><category term="markdown" /><category term="ebook" /><summary type="html"><![CDATA[]]></summary></entry><entry><title type="html">Two-Factor Authentication in your Rails App with Devise &amp;amp; Yubikey</title><link href="/software%20development/2013/01/07/two-factor-auth-in-your-rails-app.html" rel="alternate" type="text/html" title="Two-Factor Authentication in your Rails App with Devise &amp;amp; Yubikey" /><published>2013-01-07T00:00:00+00:00</published><updated>2013-01-07T00:00:00+00:00</updated><id>/software%20development/2013/01/07/two-factor-auth-in-your-rails-app</id><content type="html" xml:base="/software%20development/2013/01/07/two-factor-auth-in-your-rails-app.html"><![CDATA[<p>Most rails applications have some sort of “user” to represent either
+customers who are consuming the service or administrators that are
+publishing content to the web application.  It’s important that these
+users are authenticated (ensuring that they are who they say they are).
+For user authentication in a Ruby on Rails application, <a href="https://github.com/plataformatec/devise">Devise</a> is one of
+the best solutions out there.  It has a very active community and wide
+variety of options and extensions to fit your business model.  Sometimes
+customers may ask for or the application requires an additional layer of
+authentication beyond the basic username/password combination.</p>
+
+<p>Enter Yubikey.</p>
+
+<p><a href="http://www.yubico.com/products/yubikey-hardware/">Yubikey Hardware</a> is a small usb “key” that is set up to generate unique
+<a href="http://en.wikipedia.org/wiki/One-time_password">one-time passwords</a> that are validated against their server.  Fortunately
+someone has written an extension to incorporate the yubikey as a second
+factor of authentication against devise users called
+<a href="https://github.com/mort666/yubikey_database_authenticatable">yubikey_database_authenticatable</a>.</p>
+
+<p>In order to require users to log in with a yubikey there are a few large steps you have to take.</p>
+
+<ol>
+  <li>Have a rails application</li>
+  <li>Set up regular ‘database_authenticatable’ user authentication with
+devise. And require user authentication for access to all or part of the
+web application.</li>
+  <li>Add ‘yubikey_database_authenticatable’ gem to your project and set up
+the user model and table to use yubikey authentication.</li>
+  <li>Generate the devise views and customize the session login page to
+include the yubikey one-time password.</li>
+  <li>Add user managment/administration to the application for regulating
+and associating users with a yubikey.</li>
+</ol>
+
+<p>I have created a skeleton rails app with these steps and posted it to <a href="https://github.com/LupineDev/rails_with_yubikey">Github</a></p>
+
+<h4 id="1-have-a-rails-application">1. Have a rails application</h4>
+
+<p>For this app I am using rails 3.2.12</p>
+
+<figure class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="nv">$ </span>rails new rails_with_yubikey
+<span class="nv">$ </span><span class="nb">cd </span>rails_with_yubikey/</code></pre></figure>
+
+<p><br /></p>
+
+<p>At Ikayzo we have a fondness for lemurs so this application will maintain a list of lemurs species.</p>
+
+<figure class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="nv">$ </span>rails g scaffold lemurs species:string description:text</code></pre></figure>
+
+<p><br /></p>
+
+<p>Now that we have some actual pages in the applications we can set the
+root url of the application to the LemursController</p>
+
+<figure class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="nv">$ </span><span class="nb">rm </span>public/index.html</code></pre></figure>
+
+<p><br /></p>
+
+<figure class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="c1"># config/routes.rb</span>
+<span class="o">...</span>
+<span class="n">root</span> <span class="ss">:to</span> <span class="o">=&gt;</span> <span class="s1">'lemurs#index'</span>
+<span class="o">...</span></code></pre></figure>
+
+<p><br /></p>
+
+<h4 id="2-set-up-regular-devise-authentication">2. Set up regular devise authentication</h4>
+
+<p>There is already some great documentation for this on the <a href="https://github.com/plataformatec/devise#getting-started">Devise readme</a>
+but here are the steps I took to add it to this rails application.</p>
+
+<p>Add devise to the global part of the Gemfile</p>
+
+<figure class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="c1"># Gemfile</span>
+<span class="o">...</span>
+<span class="n">gem</span> <span class="s1">'devise'</span>
+<span class="o">...</span></code></pre></figure>
+
+<p><br /></p>
+
+<figure class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="nv">$ </span>bundle <span class="nb">install</span></code></pre></figure>
+
+<p><br /></p>
+
+<p>Next generate the devise files and user model</p>
+
+<figure class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="nv">$ </span>rails generate devise:install
+<span class="nv">$ </span>rails generate devise User
+<span class="nv">$ </span>rake db:migrate</code></pre></figure>
+
+<p><br /></p>
+
+<p>The only thing left is to require users to log in when accessing the
+LemursController</p>
+
+<figure class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="c1"># app/controllers/lemurs_controller.rb</span>
+<span class="k">class</span> <span class="nc">LemursController</span> <span class="o">&lt;</span> <span class="no">ApplicationController</span>
+  <span class="n">before_filter</span> <span class="ss">:authenticate_user!</span>
+  <span class="o">...</span>
+<span class="k">end</span></code></pre></figure>
+
+<p><br /></p>
+
+<h4 id="3--add-yubikey_database_authenticatable-extension-to-devise">3.  Add yubikey_database_authenticatable extension to devise</h4>
+
+<p>First add the yubikey_database_authenticatable gem to the applications Gemfile</p>
+
+<figure class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="c1"># Gemfile</span>
+<span class="o">...</span>
+<span class="n">gem</span> <span class="s1">'devise'</span>
+<span class="n">gem</span> <span class="s1">'yubikey_database_authenticatable'</span>
+<span class="o">...</span></code></pre></figure>
+
+<p><br /></p>
+
+<figure class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="nv">$ </span>bundle <span class="nb">install</span></code></pre></figure>
+
+<p><br /></p>
+
+<p>There are two new columns that the users table will need to authenticat
+witht he yubikey.</p>
+
+<figure class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="nv">$ </span>rails generate migration add_yubikey_to_users</code></pre></figure>
+
+<p><br /></p>
+
+<figure class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="c1"># db/migrate/TIMESTAMP_addyubikey_to_users.rb</span>
+<span class="k">class</span> <span class="nc">AddYubikeyToUsers</span> <span class="o">&lt;</span> <span class="no">ActiveRecord</span><span class="o">::</span><span class="no">Migration</span>
+  <span class="k">def</span> <span class="nf">change</span>
+    <span class="n">add_column</span> <span class="ss">:users</span><span class="p">,</span> <span class="ss">:useyubikey</span><span class="p">,</span> <span class="ss">:boolean</span>
+    <span class="n">add_column</span> <span class="ss">:users</span><span class="p">,</span> <span class="ss">:registeredyubikey</span><span class="p">,</span> <span class="ss">:string</span>
+  <span class="k">end</span>
+<span class="k">end</span></code></pre></figure>
+
+<p><br /></p>
+
+<figure class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="nv">$ </span>rake db:migrate</code></pre></figure>
+
+<p><br /></p>
+
+<p>You will have to replace :database_authenticatable with
+:yubikey_database_authenticatable to the devise line of the user
+model.</p>
+
+<figure class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="nv">$ </span>rails generate devise:views</code></pre></figure>
+
+<p><br /></p>
+
+<figure class="highlight"><pre><code class="language-html" data-lang="html"># app/views/devise/sessions/new.html.erb
+
+<span class="nt">&lt;h2&gt;</span>Sign in<span class="nt">&lt;/h2&gt;</span>
+
+<span class="nt">&lt;</span><span class="err">%=</span> <span class="na">form_for</span><span class="err">(</span><span class="na">resource</span><span class="err">,</span> <span class="na">:as =</span><span class="err">&gt; </span><span class="s">resource_name,</span> <span class="na">:url =</span><span class="err">&gt; </span><span class="s">session_path(resource_name))</span> <span class="na">do</span> <span class="err">|</span><span class="na">f</span><span class="err">|</span> <span class="err">%</span><span class="nt">&gt;</span>
+
+  <span class="nt">&lt;div&gt;&lt;</span><span class="err">%=</span> <span class="na">f.label</span> <span class="na">:email</span> <span class="err">%</span><span class="nt">&gt;&lt;br</span> <span class="nt">/&gt;</span>
+
+  <span class="nt">&lt;</span><span class="err">%=</span> <span class="na">f.email_field</span> <span class="na">:email</span> <span class="err">%</span><span class="nt">&gt;&lt;/div&gt;</span>
+
+  <span class="nt">&lt;div&gt;&lt;</span><span class="err">%=</span> <span class="na">f.label</span> <span class="na">:password</span> <span class="err">%</span><span class="nt">&gt;&lt;br</span> <span class="nt">/&gt;</span>
+
+  <span class="nt">&lt;</span><span class="err">%=</span> <span class="na">f.password_field</span> <span class="na">:password</span> <span class="err">%</span><span class="nt">&gt;&lt;/div&gt;</span>
+
+  <span class="nt">&lt;</span><span class="err">%</span> <span class="na">if</span> <span class="na">devise_mapping.rememberable</span><span class="err">?</span> <span class="na">-</span><span class="err">%</span><span class="nt">&gt;</span>
+
+    <span class="nt">&lt;div&gt;&lt;</span><span class="err">%=</span> <span class="na">f.check_box</span> <span class="na">:remember_me</span> <span class="err">%</span><span class="nt">&gt;</span> <span class="nt">&lt;</span><span class="err">%=</span> <span class="na">f.label</span> <span class="na">:remember_me</span> <span class="err">%</span><span class="nt">&gt;&lt;/div&gt;</span>
+
+  <span class="nt">&lt;</span><span class="err">%</span> <span class="na">end</span> <span class="na">-</span><span class="err">%</span><span class="nt">&gt;</span>
+
+  <span class="nt">&lt;</span><span class="err">%</span> <span class="na">if</span> <span class="na">devise_mapping.yubikey_database_authenticatable</span><span class="err">?</span> <span class="na">-</span><span class="err">%</span><span class="nt">&gt;</span>
+
+    <span class="nt">&lt;div&gt;&lt;</span><span class="err">%=</span> <span class="na">f.label</span> <span class="na">:yubiotp</span><span class="err">,</span> <span class="err">"</span><span class="na">Yubikey</span> <span class="na">One</span> <span class="na">Time</span> <span class="na">Password</span><span class="err">"</span> <span class="err">%</span><span class="nt">&gt;&lt;br</span> <span class="nt">/&gt;</span>
+
+    <span class="nt">&lt;</span><span class="err">%=</span> <span class="na">f.password_field</span> <span class="na">:yubiotp</span><span class="err">%</span><span class="nt">&gt;&lt;/div&gt;</span>
+
+  <span class="nt">&lt;</span><span class="err">%</span> <span class="na">end</span> <span class="na">-</span><span class="err">%</span><span class="nt">&gt;</span>
+
+  <span class="nt">&lt;div&gt;&lt;</span><span class="err">%=</span> <span class="na">f.submit</span> <span class="err">"</span><span class="na">Sign</span> <span class="na">in</span><span class="err">"</span> <span class="err">%</span><span class="nt">&gt;&lt;/div&gt;</span>
+
+<span class="nt">&lt;</span><span class="err">%</span> <span class="na">end</span> <span class="err">%</span><span class="nt">&gt;</span>
+
+<span class="nt">&lt;</span><span class="err">%=</span> <span class="na">render</span> <span class="na">:partial =</span><span class="err">&gt; </span><span class="s">"devise/shared/links"</span> <span class="err">%</span><span class="nt">&gt;</span></code></pre></figure>
+
+<p><br /></p>
+
+<h4 id="5-add-user-managment-to-the-application-for-regulating-and-associating-yubikeys-with-users">5. Add user managment to the application for regulating and associating yubikeys with users</h4>
+
+<p>For this application I just created a user and added a yubikey to them
+through the rails console.  To require a user to login with yubikey the
+boolean <strong>use_yubikey</strong> needs to be set to <strong>true</strong>. The other user also needs
+to have the <strong>registeredyubikey</strong> field set to their yubikeky.  I did this
+through the console by copying the text output from the yubikey to a
+clipboard and setting the field in the console.  Part of the code that
+was added to the user model is designed to peel of the first 11
+characters of the yubikey one-time password which is its static and
+unique identifier.</p>
+
+<p>In a real world application there will need to be features built in to
+managing the yubikey for the user.  If the customers/users will be
+providing their own yubikey they will need to update these settings
+themselves.  However if the yubikeys are distributed to a small group of
+users, managing these attributes should probably be hidden behind some
+administration side of the application.</p>
+
+<p>Origninally posted on <a href="http://www.techhui.com/profiles/blogs/add-two-factor-authentication-to-your-rails-app-with-devise">TechHui</a></p>]]></content><author><name></name></author><category term="software development" /><category term="rails" /><category term="yubikey" /><summary type="html"><![CDATA[Most rails applications have some sort of “user” to represent either customers who are consuming the service or administrators that are publishing content to the web application. It’s important that these users are authenticated (ensuring that they are who they say they are). For user authentication in a Ruby on Rails application, Devise is one of the best solutions out there. It has a very active community and wide variety of options and extensions to fit your business model. Sometimes customers may ask for or the application requires an additional layer of authentication beyond the basic username/password combination.]]></summary></entry><entry><title type="html">Growing Pains in Your Rails Application</title><link href="/software%20development/2012/10/19/growing-pains-in-your-rails-application.html" rel="alternate" type="text/html" title="Growing Pains in Your Rails Application" /><published>2012-10-19T00:00:00+00:00</published><updated>2012-10-19T00:00:00+00:00</updated><id>/software%20development/2012/10/19/growing-pains-in-your-rails-application</id><content type="html" xml:base="/software%20development/2012/10/19/growing-pains-in-your-rails-application.html"><![CDATA[<p>If you have been part of building an application that has lasted longer
+than a month then you’ve probably had some troubles as the project
+grows.   Business logic requirements get more and more complicated.
+Features change direction.  You occasionally “hack” something just to
+satisfy a release or an urgent bug fix, saying “I can refactor/clean
+this up this later…”</p>
+
+<p>Then one day “later…” is now.  New features are getting harder and
+harder to implement.  Everything seems intricately related and you can’t
+change one part of the app without the effects showing up somewhere else
+as bugs three weeks after the change was released.</p>
+
+<p>Usually it starts when longer logic starts showing up in your controller
+methods to fit the requirements.  Once you notice, you start moving the
+behavior logic into the models to fit the “fat-model skinny-controller”
+best practice.  Which is good but it can only take you so far.  Sooner
+or later the models get too bloated, and complex.</p>
+
+<p>Is there a way to get back out of this?  Bryan Helmkamp wrote a really
+great blog post <a href="http://blog.codeclimate.com/blog/2012/10/17/7-ways-to-decompose-fat-activerecord-models/">7 Patterns to Refactor Fat ActiveRecord Models</a> This post
+was incredibly helpful. I’ve felt this pain on projects but didn’t
+really know how I could make it better.  The solutions make it easier to
+spot and group pieces that can be extracted out into their own classes.</p>
+
+<p>Another issue is how do you know you’re in pain?  Often these problems
+arise organically over a long period of time.  By the time you become
+aware, it already feels like there is no hope. Static analysis and <a href="http://rubyrogues.com/041-rr-code-metrics/">code metrics</a>
+are a great way to pick up on these issues before they require
+weeks to extract and refactor.  Bryan is also founder of <a href="https://codeclimate.com/">Code Climate</a> a
+very high quality code metric PaaS for ruby projects.  Being aware of
+and dealing with code smells earlier saves you time and money throughout
+the life of the project.</p>
+
+<p>These are some recommended Rails &amp; OOP books that are next up in my queue of tech things to read</p>
+
+<ul>
+  <li><a href="http://objectsonrails.com/">Objects on Rails</a> by Avdi Grimm</li>
+  <li><a href="http://www.poodr.info/">Practical Object-Oriented Design in Ruby</a> by Sandi Metz</li>
+  <li><a href="http://www.growing-object-oriented-software.com/">Growing Object-Oriented Software Guided by Tests</a> by Steve Freeman &amp; Nat Pryce</li>
+</ul>
+
+<p>Origninally posted on <a href="http://www.techhui.com/profiles/blogs/growing-pains-in-your-rails-applicaiton">TechHui</a></p>]]></content><author><name></name></author><category term="software development" /><category term="rails" /><category term="ruby" /><category term="oop" /><summary type="html"><![CDATA[If you have been part of building an application that has lasted longer than a month then you’ve probably had some troubles as the project grows. Business logic requirements get more and more complicated. Features change direction. You occasionally “hack” something just to satisfy a release or an urgent bug fix, saying “I can refactor/clean this up this later…”]]></summary></entry><entry><title type="html">Being Mindful Of Your Includes</title><link href="/software%20development/2012/07/17/being_mindful_of_your_includes.html" rel="alternate" type="text/html" title="Being Mindful Of Your Includes" /><published>2012-07-17T00:00:00+00:00</published><updated>2012-07-17T00:00:00+00:00</updated><id>/software%20development/2012/07/17/being_mindful_of_your_includes</id><content type="html" xml:base="/software%20development/2012/07/17/being_mindful_of_your_includes.html"><![CDATA[<p>The use of “includes(:association_name)” in rails is a widely accepted
+rails best practice to prevent n + 1 queries in your views. If you
+aren’t sure what either of those mean check out the ruby on rails guide
+about <a href="http://guides.rubyonrails.org/active_record_querying.html#eager-loading-associations">eager loading associations</a>.  When you are retrieving a collection
+of things, this will automatically retrieve the associated object from
+the database and store it into memory.   Without this rails would need to
+call an extra query for each object when you call an attribute on the
+association.</p>
+
+<p>Now this is great especially for <em>belongs_to</em> associations.  Where you
+should be careful with (and probably not use) this is eager loading
+<em>has_many</em> associations.  Sure it will cut down on quite a few
+queries when the collections are being retrieved and speed up the
+rendering of the view.  The problem is that when the collection and
+all of it’s has_many associated objects  are retrieved in a single
+query they all have to be stored in memory.  As the size of the
+initial collection or the associated has_many objects grow it will
+not scale very well and can quickly bring your server to it’s knees.</p>
+
+<p>In computer science there is often a sliding scale between
+optimizing for run-time or memory.  For rails (and pretty much every
+web application/api) memory is extremely limited.  Therefore, if
+your rails view or controller action has quite a few “collections
+of collections” you might consider these memory saving alternatives.</p>
+
+<ul>
+  <li>Restructure the sitemap or user interface so not quite so many things need to be displayed at the same time.  This could be as simple as pagination, or more involved like lazy loading “collections of collections” only when they are needed through an asynchronous request.</li>
+  <li>Be sure to use YourModel.find_each when you have to iterate through 
+extremely large collections of objects.  The find_each method retrieves the collections in batches.  There is even an option to specify the batch size to reach the happy medium between memory and runtime.</li>
+</ul>
+
+<p>P.S. If you haven’t done so already don’t forget to register for <a href="http://aloharubyconf.com/">AlohaRubyConf</a>!
+They have an amazing line up of speakers. It’s a great opportunity to learn from leaders of the ruby community and share experiences with real developers in the same field.</p>
+
+<p>Origninally posted on <a href="http://www.techhui.com/profiles/blogs/being-mindful-of-your-includes">TechHui</a></p>]]></content><author><name></name></author><category term="software development" /><category term="rails" /><category term="ruby" /><summary type="html"><![CDATA[The use of “includes(:association_name)” in rails is a widely accepted rails best practice to prevent n + 1 queries in your views. If you aren’t sure what either of those mean check out the ruby on rails guide about eager loading associations. When you are retrieving a collection of things, this will automatically retrieve the associated object from the database and store it into memory. Without this rails would need to call an extra query for each object when you call an attribute on the association.]]></summary></entry><entry><title type="html">Microsoft Translator Ruby Gem</title><link href="/software%20development/2012/06/10/microsoft-translator-ruby-gem.html" rel="alternate" type="text/html" title="Microsoft Translator Ruby Gem" /><published>2012-06-10T00:00:00+00:00</published><updated>2012-06-10T00:00:00+00:00</updated><id>/software%20development/2012/06/10/microsoft-translator-ruby-gem</id><content type="html" xml:base="/software%20development/2012/06/10/microsoft-translator-ruby-gem.html"><![CDATA[<p>Origninally posted on <a href="http://www.techhui.com/profiles/blogs/microsoft-translator-ruby-gem">TechHui</a></p>
+
+<p>I know “Microsoft” is not the first word that comes mind when you’re writing a ruby application but since Google dropped the free tier for their translation service the Microsoft Translator API is a good alternative for a small/personal project that you don’t want to have to bother with the monthly bill.</p>
+
+<p>Recently I’ve had to use this API in a project and this weekend I
+extracted the functionality out into a simple gem.  I present to you
+ (queue applause) <a href="https://github.com/ikayzo/microsoft_translator">microsoft_translator</a></p>
+
+<p>Before translating things from your ruby application you first need to
+sign up for the Microsoft Translator API in the Windows <a href="https://datamarket.azure.com/dataset/1899a118-d202-492c-aa16-ba21c3">Azure
+Datamarket</a></p>
+
+<p>Also, you shouldn’t stress about what to put for the <strong>Redirect URI</strong>. For
+the purposes of this gem you won’t be using it so your project’s
+homepage will work just fine. You’ll use the <strong>Client ID</strong> and <strong>Client
+secret</strong> to authenticate your requests to the API. Once this is done you’ll
+install it like you would any other gem…</p>
+
+<p>First create a MicrosoftTranslator::Client with your Client ID &amp; secret.
+To translate pass in the foreign text allong with the language codes for
+the language you are going from/to and the content type. The content
+type is either “text/plain” or “text/html”</p>
+
+<figure class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="n">translator</span> <span class="o">=</span> <span class="no">MicrosoftTranslator</span><span class="o">::</span><span class="no">Client</span><span class="p">.</span><span class="nf">new</span><span class="p">(</span><span class="s1">'your_client_id'</span><span class="p">,</span> <span class="s1">'your_client_secret'</span><span class="p">)</span>
+<span class="n">spanish</span> <span class="o">=</span> <span class="s2">"hasta luego muchacha"</span><span class="n">translator</span><span class="p">.</span><span class="nf">translate</span><span class="p">(</span><span class="n">spanish</span><span class="p">,</span><span class="s2">"es"</span><span class="p">,</span><span class="s2">"en"</span><span class="p">,</span><span class="s2">"text/html"</span><span class="p">)</span>
+
+<span class="c1"># =&gt;  "until then girl"</span></code></pre></figure>
+
+<p><br /></p>
+
+<p>That’s about it! This is a list of the supported languages by the
+<a href="http://www.microsofttranslator.com/help/?FORM=R5FD">Microsoft Translate API</a> and here are all the
+language codes as a <a href="http://www.loc.gov/standards/iso639-2/php/code_list.php">helpful reference</a>.</p>]]></content><author><name></name></author><category term="software development" /><category term="ruby" /><category term="translator" /><summary type="html"><![CDATA[Origninally posted on TechHui]]></summary></entry><entry><title type="html">Ruby HTTP don’t for get use_ssl</title><link href="/software%20development/2012/05/19/ruby-http-dont-forget-use-ssl.html" rel="alternate" type="text/html" title="Ruby HTTP don’t for get use_ssl" /><published>2012-05-19T00:00:00+00:00</published><updated>2012-05-19T00:00:00+00:00</updated><id>/software%20development/2012/05/19/ruby-http-dont-forget-use-ssl</id><content type="html" xml:base="/software%20development/2012/05/19/ruby-http-dont-forget-use-ssl.html"><![CDATA[<p>In a project this week I had send some http requests from a ruby program
+and do something with the response.  One of the requests needed to be
+https so I tried something along these lines…</p>
+
+<figure class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="nb">require</span> <span class="s2">"net/https"</span>
+<span class="nb">require</span> <span class="s2">"uri"</span>
+
+<span class="n">uri</span> <span class="o">=</span> <span class="no">URI</span><span class="p">.</span><span class="nf">parse</span><span class="p">(</span><span class="s2">"https://secure.com/"</span><span class="p">)</span>
+<span class="n">http</span> <span class="o">=</span> <span class="no">Net</span><span class="o">::</span><span class="no">HTTP</span><span class="p">.</span><span class="nf">new</span><span class="p">(</span><span class="n">uri</span><span class="p">.</span><span class="nf">host</span><span class="p">,</span> <span class="n">uri</span><span class="p">.</span><span class="nf">port</span><span class="p">)</span>
+<span class="n">response</span> <span class="o">=</span> <span class="n">http</span><span class="p">.</span><span class="nf">request</span><span class="p">(</span><span class="n">request</span><span class="p">)</span></code></pre></figure>
+
+<p><br /></p>
+
+<p>This looks like it should work right? When URI parses the https url it
+even knows to use the https port…</p>
+
+<figure class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="n">uri</span><span class="p">.</span><span class="nf">port</span>
+<span class="c1"># =&gt; 443</span></code></pre></figure>
+
+<p><br /></p>
+
+<p>Only the request kept timing out and I didn’t know why. After some
+googleling and rereading parts of blog posts I had previously overlooked
+my salvation came from a very helpful post by <a href="http://www.rubyinside.com/nethttp-cheat-sheet-2940.html">August Lilleaas</a>.  Even
+though the parsed URI object recognized the https port the http request
+still has to be told to send as https.  You can set this with an option
+called “user_ssl”</p>
+
+<figure class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="n">http</span><span class="p">.</span><span class="nf">use_ssl</span> <span class="o">=</span> <span class="kp">true</span></code></pre></figure>
+
+<p><br /></p>
+
+<p>No more ambiguous timout :)</p>]]></content><author><name></name></author><category term="software development" /><category term="rails" /><category term="ruby" /><summary type="html"><![CDATA[In a project this week I had send some http requests from a ruby program and do something with the response. One of the requests needed to be https so I tried something along these lines…]]></summary></entry><entry><title type="html">Are you mocking me? (You should be)</title><link href="/software%20development/2012/04/20/are-you-mocking-me-you-should-be.html" rel="alternate" type="text/html" title="Are you mocking me? (You should be)" /><published>2012-04-20T00:00:00+00:00</published><updated>2012-04-20T00:00:00+00:00</updated><id>/software%20development/2012/04/20/are-you-mocking-me-you-should-be</id><content type="html" xml:base="/software%20development/2012/04/20/are-you-mocking-me-you-should-be.html"><![CDATA[<p>This post is just a friendly reminder for those that practice TDD/BDD to
+make sure they are not putting more ceremony into their tests than is
+necessary.  Use mocks and stubs instead!</p>
+
+<p>Mocks are just stand-ins that behave like the thing we want it to
+represent.  Stubs will fake a method call and return a canned response.
+These save time both in setting up the test and in running it (depending
+on if your real objects are persisted in a test database).  When you
+test a method you should only test things the method is actually <strong>doing</strong>.</p>
+
+<p>I’m going to use Ruby on Rails and RSpec as an example.  A classic
+situation is that we have an e-commerce application with a Order model
+that has many ShopItems.  Now all we need to test that a cart object
+will calculate it’s total as the sum of the prices of all of its
+ShopItems.  We don’t care what the names of the items are or if they are
+actually stored in the database.</p>
+
+<figure class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="n">describe</span> <span class="no">Order</span> <span class="k">do</span>
+  <span class="n">describe</span> <span class="s2">"#sub_total"</span> <span class="k">do</span>
+    <span class="c1"># writing everything to db</span>
+    <span class="n">it</span> <span class="s2">"should calculate the sum of all of its shop_items"</span> <span class="k">do</span>
+      <span class="n">order</span> <span class="o">=</span> <span class="no">Order</span><span class="p">.</span><span class="nf">create</span><span class="p">(</span><span class="n">some_options</span><span class="p">)</span>
+      <span class="mi">3</span><span class="p">.</span><span class="nf">times</span> <span class="k">do</span>
+        <span class="n">order</span><span class="p">.</span><span class="nf">shop_items</span> <span class="o">&lt;&lt;</span> <span class="no">ShopItem</span><span class="p">.</span><span class="nf">create</span><span class="p">(</span><span class="ss">:price</span> <span class="o">=&gt;</span> <span class="mf">2.00</span><span class="p">)</span>
+      <span class="k">end</span>
+      <span class="n">order</span><span class="p">.</span><span class="nf">subtotal</span><span class="p">.</span><span class="nf">should</span> <span class="n">be_within</span><span class="p">(</span><span class="mf">0.01</span><span class="p">).</span><span class="nf">of</span><span class="p">(</span><span class="mf">6.0</span><span class="p">)</span>
+    <span class="k">end</span>
+    <span class="c1">#  mocking</span>
+    <span class="n">it</span> <span class="s2">"should calculate the sum of all of its shop_items"</span> <span class="k">do</span>
+      <span class="n">order</span> <span class="o">=</span> <span class="no">Order</span><span class="p">.</span><span class="nf">create</span><span class="p">(</span><span class="n">some_options</span><span class="p">)</span>
+      <span class="n">fake_items</span> <span class="o">=</span> <span class="p">[</span><span class="n">stub</span><span class="p">(</span><span class="ss">:price</span> <span class="o">=&gt;</span> <span class="mf">2.00</span><span class="p">),</span> <span class="n">stub</span><span class="p">(</span><span class="ss">:price</span> <span class="o">=&gt;</span> <span class="mf">2.00</span><span class="p">),</span> <span class="n">stub</span><span class="p">(</span><span class="ss">:price</span> <span class="o">=&gt;</span> <span class="mf">2.00</span><span class="p">)]</span>
+      <span class="n">order</span><span class="p">.</span><span class="nf">stub!</span><span class="p">(</span><span class="ss">:shop_items</span><span class="p">).</span><span class="nf">and_return</span><span class="p">(</span><span class="n">fake_items</span><span class="p">)</span>
+      <span class="n">order</span><span class="p">.</span><span class="nf">subtotal</span><span class="p">.</span><span class="nf">should</span> <span class="n">be_within</span><span class="p">(</span><span class="mf">0.01</span><span class="p">).</span><span class="nf">of</span><span class="p">(</span><span class="mf">6.0</span><span class="p">)</span>
+    <span class="k">end</span>
+  <span class="k">end</span>
+<span class="k">end</span></code></pre></figure>
+
+<p><br /></p>
+
+<p>Origninally posted on <a href="http://www.techhui.com/profiles/blogs/are-you-mocking-me-you-should-be">TechHui</a></p>]]></content><author><name></name></author><category term="software development" /><category term="ruby" /><category term="rspec" /><category term="tdd" /><summary type="html"><![CDATA[This post is just a friendly reminder for those that practice TDD/BDD to make sure they are not putting more ceremony into their tests than is necessary. Use mocks and stubs instead!]]></summary></entry><entry><title type="html">Using the Pomodoro Technique as a Programmer</title><link href="/software%20development/2012/02/27/using-the-pomodoro-technique-as-a-programmer.html" rel="alternate" type="text/html" title="Using the Pomodoro Technique as a Programmer" /><published>2012-02-27T00:00:00+00:00</published><updated>2012-02-27T00:00:00+00:00</updated><id>/software%20development/2012/02/27/using-the-pomodoro-technique-as-a-programmer</id><content type="html" xml:base="/software%20development/2012/02/27/using-the-pomodoro-technique-as-a-programmer.html"><![CDATA[<p>Productivity and concentration are two very important words to someone who writes code for a living. There is a wide variety of tools, methodologies, tricks and “hacks” out there that claim to help one improve in these areas. One such technique that I’ve adopted over the past couple of months is known as the “Pomodoro”.</p>
+
+<p>The Pomodoro Technique was developed by Francesco Cirillo in the 1980’s and is easily summed up in a few simple rules. It encourages you to accomplish more in a short intensely focused sprint called a “pomodoro”. Between these sprints you take short breaks to avoid mental fatigue and maintain creative freshness. A full pomodoro cycle goes like this</p>
+
+<ul>
+  <li>Before the pomodoro briefly write out what you plan to accomplish in this sprint. Usually this is on a simple piece of paper broken down into one or more list items.</li>
+  <li>Each pomodoro is 25 minutes long. Focus on accomplishing what you wrote down in that order and cross them off as you get them done. Put off distractions that come up until the pomodoro has finished.</li>
+  <li>Between each pomodoro take a 5-minute break. Clear your head, address any distractions that came up during the pomodoro, and update your list for the next sprint.</li>
+  <li>After several of these cycles (usually 3 or 4) take a longer break of 15-30 minutes.</li>
+</ul>
+
+<p>There is more you can do with it as well like marking the beginning of each pomodoro in your list so you get better estimating how much you can accomplish in each cycle but that is the technique in a nutshell. 25 minutes is the default if you feel you stay in the groove longer, you certainly could tailor the sprint and break periods to fit your creative workflow. Just don’t go too long. The point of the pomodoro is to reduce mental fatigue.</p>
+
+<p>In my practice of the technique I’ve been using the standard 25/5-minute pomodoro/break periods for 3 or 4 cycles between the longer breaks. Breaking the task at hand down to a granular level with a strict path I feel has really boosted my focus and productivity. For many professions and for programming in particular it is fairly easy to be actively working for extended periods of time but still not accomplish what you set out to do.</p>
+
+<p>While working on a feature you may notice a small bug in a nearby piece of the application. Once that bug is dealt with you receive an urgent email about another project or feature. By the time those are dealt with you’ve lost the half-implemented solution you were playing around with in your head for that initial problem. The pomodoro technique encourages you to stay on the path you set out on. When a work-related “distraction” comes up (like the bug or email mentioned above), make note of it but return to the list once it is written down. That way when you are done with the pomodoro you can prioritize it and put it into the queue for the next pomodoro. The goal is to have accomplished the most important tasks you needed to do by the end of the day, versus touching upon multiple issues that ultimately remain incomplete.</p>
+
+<p>This technique is definitely not for everyone. I think that it is best utilized when you are working independently (solo or as a pair) for 2-4 hour blocks of the day. If your task at hand or work environment is highly collaborative it can actually hinder the team as a whole. If a team member is at a roadblock it does more harm than good if you are constantly telling them “Please sit on your hands for 17 minutes while I finish this pomodoro.” Also, for some people the underlying principles that make the pomodoro technique useful just seem to come naturally. So I do not think that this should be enforced upon an entire organization or used strictly for 100% of someone’s work week.</p>
+
+<p>Many programmers, myself included, are intrigued by problems and feel a strong urge to instantly dive into them as they appear. I think the Pomodoro Technique is a great way to help channel our innate curiosity and solve the most important problems of our work day.</p>
+
+<p>More Pomodoro Links:</p>
+
+<ul>
+  <li><a href="http://www.lifehack.org/articles/productivity/the-pomodoro-technique-is-it-right-for-you.html">http://www.lifehack.org/articles/productivity/the-pomodoro-technique-is-it-right-for-you.html</a></li>
+  <li><a href="http://pragprog.com/book/snfocus/pomodoro-technique-illustrated">http://pragprog.com/book/snfocus/pomodoro-technique-illustrated</a></li>
+  <li><a href="http://programmingzen.com/2011/03/14/getting-stuff-done-with-the-pomodoro-technique/">http://programmingzen.com/2011/03/14/getting-stuff-done-with-the-pomodoro-technique/</a></li>
+  <li><a href="http://tomatoi.st/">http://tomatoi.st/</a></li>
+</ul>
+
+<p>Origninally posted on <a href="http://www.techhui.com/profiles/blogs/employing-the-pomodoro-technique-as-a-computer-programmer">TechHui</a></p>]]></content><author><name></name></author><category term="software development" /><category term="productivity" /><category term="motivation" /><summary type="html"><![CDATA[Productivity and concentration are two very important words to someone who writes code for a living. There is a wide variety of tools, methodologies, tricks and “hacks” out there that claim to help one improve in these areas. One such technique that I’ve adopted over the past couple of months is known as the “Pomodoro”.]]></summary></entry></feed>

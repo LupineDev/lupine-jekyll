@@ -69,72 +69,92 @@
   <div class="large-10 small-12 columns">
     <p><img src="http://9a6b3d25fbd39dfd6920-37d0972e62b1cfc05ea05a81768e1191.r69.cf2.rackcdn.com/cover.jpg" alt="wordsmith" /></p>
 
-<p>Many of us have either had the urge to write a book or spew some sort of long-winded excrement of words. Maybe it’s a story that’s been bouncing around in your head, a piece of history you would like to document, or a coalescence of documentation/blog posts on a subject you are passionate about. Regardless of the reason they all require the same thing. The ability to convert written text into a document or eBook format.</p>
+<p>Many of us have either had the urge to write a book or spew some sort of
+long-winded excrement of words.  Maybe it’s a story that’s been bouncing
+around in your head, a piece of history you would like to document, or a
+coalescence of documentation/blog posts on a subject you are passionate
+about. Regardless of the reason they all require the same thing.  The
+ability to convert written text into a document or eBook format.</p>
 
-<p>Since I am a ruby developer I’ve gotten quite comfortable writing <a href="http://daringfireball.net/projects/markdown/">markdown</a> for documentation or general formatted text content. So the ability to compose the book in markdown that supports <a href="https://help.github.com/articles/github-flavored-markdown">Github style</a> code snippets is a big plus for me. After some brief searching I found ruby gem called <a href="https://github.com/tractical/wordsmith">wordsmith</a> that fit the bill pretty nicely with decent set of features.</p>
-
-<ul>
-<li>
-<p>Compose content in markdown with syntax highlighting for code snippets.</p>
-</li>
-
-<li>
-<p>Simple <a href="https://github.com/tractical/wordsmith#usage">directory structure</a> that automatically generates the table of contents.</p>
-</li>
-
-<li>
-<p>Generates eBooks in several popular formats</p>
+<p>Since I am a ruby developer I’ve gotten quite comfortable writing
+<a href="http://daringfireball.net/projects/markdown/">markdown</a> for documentation or general formatted text content. So the
+ability to compose the book in markdown that supports <a href="https://help.github.com/articles/github-flavored-markdown">Github style</a> code
+snippets is a big plus for me. After some brief searching I found ruby
+gem called <a href="https://github.com/tractical/wordsmith">wordsmith</a> that fit the bill pretty nicely with decent set of
+features.</p>
 
 <ul>
-<li>HTML with styles that are easy to customize</li>
+  <li>Compose content in markdown with syntax highlighting for code snippets.</li>
+  <li>Simple <a href="https://github.com/tractical/wordsmith#usage">directory structure</a> that automatically generates the table of contents.</li>
+  <li>
+    <p>Generates eBooks in several popular formats</p>
 
-<li>epub</li>
-
-<li>mobi (kindle)</li>
-
-<li>pdf</li>
+    <ul>
+      <li>HTML with styles that are easy to customize</li>
+      <li>epub</li>
+      <li>mobi (kindle)</li>
+      <li>pdf</li>
+    </ul>
+  </li>
 </ul>
-</li>
-</ul>
 
-<p><strong>Note:</strong> The following example requires basic understanding of git/github, html &amp; css, how to use ruby/rubygems, as well as the command line.</p>
+<p><strong>Note:</strong> The following example requires basic understanding of git/github, html &amp; css, how to use ruby/rubygems,  as well as the command line.</p>
 
-<p>Before installing maker sure to install the <a href="http://johnmacfarlane.net/pandoc/installing.html">pandoc</a> dependency listed in the <a href="https://github.com/tractical/wordsmith#installing">README</a>. Don’t forget to install the LaTeX library listed in the pandoc install instructions if you would like to generate a pdf version. Also, <a href="http://www.amazon.com/gp/feature.html?ie=UTF8&docId=1000234621">kindlegen</a> is required if mobi is one of your desired output formats.</p>
+<p>Before installing maker sure to install the <a href="http://johnmacfarlane.net/pandoc/installing.html">pandoc</a> dependency listed in
+the <a href="https://github.com/tractical/wordsmith#installing">README</a>.  Don’t forget to install the LaTeX library listed in the
+pandoc install instructions if you would like to generate a pdf version.
+Also, <a href="http://www.amazon.com/gp/feature.html?ie=UTF8&amp;docId=1000234621">kindlegen</a> is required if mobi is one of your desired output
+formats.</p>
 
 <p>I’ve tested the gem using ruby 1.9.3-p392. It installs like any other gem:</p>
-<div class='highlight'><pre><code class='bash'>gem install wordsmith --no-rdoc --no-ri
-</code></pre></div>
-<p>To create a new ebook project simply follow the <a href="https://github.com/tractical/wordsmith#usage">usage</a> instructions outlined in the README. The required structure of the chapters and subsections are shockingly straight forward. Simply write all your content and generate it to the desired format. The gem sets up a git repository for the book automatically so it is a good idea to store the progress of your work in incremental and contextually related git commits.</p>
 
-<p>Initially the stylesheet that is included is pretty simple but would be easy to override by someone who possesses a bit of CSS know-how. A custom header/footer can also be added to the eBook by editing the respectively named html files in the layout folder.</p>
+<figure class="highlight"><pre><code class="language-bash" data-lang="bash">gem <span class="nb">install </span>wordsmith <span class="nt">--no-rdoc</span> <span class="nt">--no-ri</span></code></pre></figure>
 
-<p>The wordsmith gem also includes a publish command. With this you can publish the html version of your eBook using <a href="https://help.github.com/categories/20/articles">github pages</a>.</p>
+<p>To create a new ebook project simply follow the <a href="https://github.com/tractical/wordsmith#usage">usage</a> instructions
+outlined in the README.  The required structure of the chapters and
+subsections are shockingly straight forward.  Simply write all your
+content and generate it to the desired format.  The gem sets up a git
+repository for the book automatically so it is a good idea to store the
+progress of your work in incremental and contextually related git
+commits.</p>
+
+<p>Initially the stylesheet that is included is pretty simple but would be easy to override by someone who possesses a bit of CSS know-how.  A custom header/footer can also be added to the eBook by editing the respectively named html files in the layout folder.</p>
+
+<p>The wordsmith gem also includes a publish command. With this you can
+publish the html version of your eBook using <a href="https://help.github.com/categories/20/articles">github pages</a>.</p>
 
 <ol>
-<li>Write and <a href="https://github.com/tractical/wordsmith#to-generate-your-book-in-different-formats">generate</a> your ebook in the html format</li>
-
-<li>Commit to the master branch</li>
-
-<li><a href="https://help.github.com/articles/create-a-repo">Create a repository</a> on github named for your ebook but don’t push anything to it. Also elect not to create a README file.</li>
-
-<li>Update the .git/config file for the ebook git repository so the origin remote is referencing your new repository on github.</li>
-
-<li>Run the command:</li>
+  <li>Write and <a href="https://github.com/tractical/wordsmith#to-generate-your-book-in-different-formats">generate</a> your ebook in the html format</li>
+  <li>Commit to the master branch</li>
+  <li><a href="https://help.github.com/articles/create-a-repo">Create a repository</a> on github named for your ebook but don’t push
+anything to it. Also elect not to create a README file.</li>
+  <li>Update the .git/config file for the ebook git repository so the
+origin remote is referencing your new repository on github.</li>
+  <li>Run the command:</li>
 </ol>
-<div class='highlight'><pre><code class='bash'>    <span class='nv'>$ </span>wordsmith publish git@github.com:your_github_username/your_ebook_repository_name.git
-  
-</code></pre></div>
+
+<figure class="highlight"><pre><code class="language-bash" data-lang="bash">    <span class="nv">$ </span>wordsmith publish git@github.com:your_github_username/your_ebook_repository_name.git
+  </code></pre></figure>
+
 <ol>
-<li>If the publish command fails for some reason push it up manually with the command:</li>
+  <li>If the publish command fails for some reason push it up manually with the command:</li>
 </ol>
-<div class='highlight'><pre><code class='bash'>    git push origin gh-pages:gh-pages
-  
-</code></pre></div>
-<p>You can see an example I created based off the one wordsmith generates for every new project at <a href="http://lupinedev.github.com/wordsmith-example/">http://lupinedev.github.com/wordsmith-example/</a></p>
 
-<p>This is definitely a programmer’s approach to writing an eBook and probably not for everyone, but I found it to be an entertaining exercise that I might use in future. I have not done too much research on the products/tools that already exist in the eBook-creating world but would be curious what other options people have found and what they think of them.</p>
+<figure class="highlight"><pre><code class="language-bash" data-lang="bash">    git push origin gh-pages:gh-pages
+  </code></pre></figure>
+
+<p>You can see an example I created based off the one wordsmith generates
+for every new project at <a href="http://lupinedev.github.com/wordsmith-example/">http://lupinedev.github.com/wordsmith-example/</a></p>
+
+<p>This is definitely a programmer’s approach to writing an eBook and
+probably not for everyone, but I found it to be an entertaining exercise
+that I might use in future.  I have not done too much research on the
+products/tools that already exist in the eBook-creating world but would
+be curious what other options people have found and what they think of
+them.</p>
 
 <p>Origninally posted on <a href="http://www.techhui.com/profiles/blogs/write-you-re-own-ebook-in-markdown-with-ruby-and-github-pages">TechHui</a></p>
+
   </div>
   <div class="large-2 small-12 columns">
     <ul class="side-nav">
