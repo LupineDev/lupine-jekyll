@@ -1,0 +1,132 @@
+<html>
+<head>
+<title> Docker: Error response from daemon volume is in use |  Lupine Software Development</title>
+<link rel="stylesheet" type="text/css" href="/stylesheets/app.css" />
+<link rel="stylesheet" type="text/css" href="/stylesheets/pygments.css" />
+<script src="http://code.jquery.com/jquery-1.9.1.min.js"></script>
+<script src="/javascripts/foundation/foundation.js"></script>
+<script src="/javascripts/foundation/foundation.topbar.js"></script>
+<link href="http://coderwall.com/stylesheets/jquery.coderwall.css" media="all" rel="stylesheet" type="text/css">
+<script src="http://coderwall.com/javascripts/jquery.coderwall.js"></script>
+</head>
+<body>
+<nav class="top-bar">
+  <ul class="title-area">
+    <!-- Title Area -->
+    <li class="name active">
+      <h1><a href="/">Lupine Software Development</a></h1>
+    </li>
+    <!-- Remove the class "menu-icon" to get rid of menu icon. Take out "Menu" to just have icon alone -->
+    <li class="toggle-topbar menu-icon"><a href="#"><span>Menu</span></a></li>
+  </ul>
+
+  <section class="top-bar-section">
+    <!-- Left Nav Section -->
+    <ul class="left">
+      <li class="divider"></li>
+      <li class=""><a href="/blog">Blog</a></li>
+      <li class="divider"></li>
+    </ul>
+    <ul class="right">
+      <li class="divider"></li>
+      <li class="">
+      <a href="https://twitter.com/lupinedev">
+        <img src="/images/twitter.png" rel="me" style="width: 44px; height: 44px;" />
+      </a>
+      </li>
+      <li class="divider"></li>
+      <li class=""><a href="https://github.com/LupineDev" rel="me"><img src="/images/github.png" style="width: 34px; height: 34px; margin: 5px 0 5px 0;" /></a></li>
+      <li class="divider"></li>
+      <li class="has-dropdown"><a href="">Hawaii Tech</a>
+        <ul class="dropdown">
+          <li><a href="http://www.meetup.com/aloharb/">Aloha.rb</a></li>
+          <li><a href="http://www.meetup.com/dynamic/">OUDL</a></li>
+          <li><a href="http://hicapacity.org">HiCapacity</a></li>
+          <li><a href="http://techhui.com">Tech Hui</a></li>
+        </ul>
+      </li>
+      <li class="divider"></li>
+    </ul>
+
+    <!-- Right Nav Section -->
+  </section>
+</nav>
+
+
+<div class="row">
+  <div class="large-12 small-12 columns">
+    <h1>Docker: Error response from daemon volume is in use</h1>
+  </div>
+</div>
+<div class="row">
+  <div class="large-12 small-12 columns">
+    <ul class="breadcrumbs">
+      <li class="current">Posted On: 24 Aug 2023</li>
+    </ul>
+  </div>
+</div>
+<div class="row">
+  <div class="large-10 small-12 columns">
+    <p>It’s been almost 10 years since my last post… Here is a short one I’ve been meaning to write for a while.</p>
+
+<p>Have you ever encountered an error like this when running <code class="language-plaintext highlighter-rouge">docker compose down -v</code>
+<br />
+(formerly <code class="language-plaintext highlighter-rouge">docker-compose down -v</code>)?</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Docker: Error response from daemon volume is in use
+</code></pre></div></div>
+<p><br /></p>
+
+<p>It can happen when you have a container still running 
+This is something I have seen often enough to prompt writing this blog post.  Then next thing I usually try is <code class="language-plaintext highlighter-rouge">docker compose ps</code>
+to see if any containers are still running.</p>
+
+<p>If you have stopped all containters and it is still complaining the next thing to try is to remove all stopped containers
+with this command thanks to (<a href="https://stackoverflow.com/a/56865672">LinPy on stackoverflow</a>)</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>docker <span class="nb">rm</span> <span class="nt">-f</span> <span class="si">$(</span>docker ps <span class="nt">-a</span> <span class="nt">-q</span><span class="si">)</span>
+</code></pre></div></div>
+<p><br /></p>
+
+<p>You can also use the <a href="https://docs.docker.com/engine/reference/commandline/system_prune/">docker system prune</a> command. It will remove all unused:</p>
+<ul>
+  <li>Containers</li>
+  <li>Networkds</li>
+  <li>Images</li>
+  <li>Volumes</li>
+</ul>
+
+<p>This command is also useful to run periodically, especially after tinkering with Dockerfiles as there are bound to be a few vestigial image layers
+hanging around.</p>
+
+  </div>
+  <div class="large-2 small-12 columns">
+    <ul class="side-nav">
+  <li class="divider"><li>
+  <li><a href="/blog/categories/">Categories</a></li>
+  <li class="divider"><li>
+  <li><a href="/blog/tags/">Tags</a></li>
+  <li class="divider"><li>
+</ul>
+<section class="coderwall" data-coderwall-username="lupinedev" data-coderwall-orientation="vertical"></section>
+
+  </div>
+</div>
+<div class="row">
+  <div class="large-12 small-12 columns">
+    <ul class="breadcrumbs">
+      <li><a href="/blog/">Blog</a></li>
+      <li class="current"><a href="page.url">Docker: Error response from daemon volume is in use</a></li>
+    </ul>
+  </div>
+</div>
+
+  <div class="row">
+    <div class="large-12 small-12 columns text-center">
+      <p>&copy; 2013 Lupine Software Development</p>
+    </div>
+  </div>
+
+
+</body>
+</html>

@@ -1,4 +1,34 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.3.2">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2023-08-25T08:56:18+00:00</updated><id>http://localhost:4000/feed.xml</id><entry><title type="html">Maintaining Skill Momentum</title><link href="http://localhost:4000/software%20development/2013/09/04/maintaining-skill-momentum.html" rel="alternate" type="text/html" title="Maintaining Skill Momentum" /><published>2013-09-04T00:00:00+00:00</published><updated>2013-09-04T00:00:00+00:00</updated><id>http://localhost:4000/software%20development/2013/09/04/maintaining-skill-momentum</id><content type="html" xml:base="http://localhost:4000/software%20development/2013/09/04/maintaining-skill-momentum.html"><![CDATA[<p>Whatever profession you are a part of it requires some set of skills in order to accomplish.  The skill is useful, or at least someone thinks it’s valuable enough to pay you to perform it. At the beginning of your career you are learning many new things every day.  Your new job/project constantly pushes the boundaries of your experience.  As time progresses and you become able to perform your job with less assistance from mentors and co-workers. The great initial momentum at which you learn new skills and refine existing ones begins to peter out. This is not guaranteed to happen, but it gets harder to find time to really focus on improving your craft. It’s something I’ve found myself struggling with this past year.</p>
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.3.2">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2023-08-25T08:39:22+00:00</updated><id>http://localhost:4000/feed.xml</id><entry><title type="html">Docker: Error response from daemon volume is in use</title><link href="http://localhost:4000/software%20development/2023/08/24/docker-error-response-from-daemon-volume-is-in-use.html" rel="alternate" type="text/html" title="Docker: Error response from daemon volume is in use" /><published>2023-08-24T00:00:00+00:00</published><updated>2023-08-24T00:00:00+00:00</updated><id>http://localhost:4000/software%20development/2023/08/24/docker-error-response-from-daemon-volume-is-in-use</id><content type="html" xml:base="http://localhost:4000/software%20development/2023/08/24/docker-error-response-from-daemon-volume-is-in-use.html"><![CDATA[<p>It’s been almost 10 years since my last post… Here is a short one I’ve been meaning to write for a while.</p>
+
+<p>Have you ever encountered an error like this when running <code class="language-plaintext highlighter-rouge">docker compose down -v</code>
+<br />
+(formerly <code class="language-plaintext highlighter-rouge">docker-compose down -v</code>)?</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Docker: Error response from daemon volume is in use
+</code></pre></div></div>
+<p><br /></p>
+
+<p>It can happen when you have a container still running 
+This is something I have seen often enough to prompt writing this blog post.  Then next thing I usually try is <code class="language-plaintext highlighter-rouge">docker compose ps</code>
+to see if any containers are still running.</p>
+
+<p>If you have stopped all containters and it is still complaining the next thing to try is to remove all stopped containers
+with this command thanks to (<a href="https://stackoverflow.com/a/56865672">LinPy on stackoverflow</a>)</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>docker <span class="nb">rm</span> <span class="nt">-f</span> <span class="si">$(</span>docker ps <span class="nt">-a</span> <span class="nt">-q</span><span class="si">)</span>
+</code></pre></div></div>
+<p><br /></p>
+
+<p>You can also use the <a href="https://docs.docker.com/engine/reference/commandline/system_prune/">docker system prune</a> command. It will remove all unused:</p>
+<ul>
+  <li>Containers</li>
+  <li>Networkds</li>
+  <li>Images</li>
+  <li>Volumes</li>
+</ul>
+
+<p>This command is also useful to run periodically, especially after tinkering with Dockerfiles as there are bound to be a few vestigial image layers
+hanging around.</p>]]></content><author><name></name></author><category term="software development" /><category term="docker" /><category term="error" /><category term="docker compoes" /><summary type="html"><![CDATA[It’s been almost 10 years since my last post… Here is a short one I’ve been meaning to write for a while.]]></summary></entry><entry><title type="html">Maintaining Skill Momentum</title><link href="http://localhost:4000/software%20development/2013/09/04/maintaining-skill-momentum.html" rel="alternate" type="text/html" title="Maintaining Skill Momentum" /><published>2013-09-04T00:00:00+00:00</published><updated>2013-09-04T00:00:00+00:00</updated><id>http://localhost:4000/software%20development/2013/09/04/maintaining-skill-momentum</id><content type="html" xml:base="http://localhost:4000/software%20development/2013/09/04/maintaining-skill-momentum.html"><![CDATA[<p>Whatever profession you are a part of it requires some set of skills in order to accomplish.  The skill is useful, or at least someone thinks it’s valuable enough to pay you to perform it. At the beginning of your career you are learning many new things every day.  Your new job/project constantly pushes the boundaries of your experience.  As time progresses and you become able to perform your job with less assistance from mentors and co-workers. The great initial momentum at which you learn new skills and refine existing ones begins to peter out. This is not guaranteed to happen, but it gets harder to find time to really focus on improving your craft. It’s something I’ve found myself struggling with this past year.</p>
 
 <p>In the technology industry this is more important than most.  If the is organization you work for is smart they’ll invest some time &amp; money into skill development of their employees. Maybe it’s bringing in consultants to give training, lunch &amp; learn sessions or sending employees to attend conferences. All of those are awesome!  …but usually they are not enough by themselves, things are just changing too rapidly.  Even if the tools &amp; processes you work with are not shifting as fast as other areas of the industry, there is almost always something you could do to hone your skill.</p>
 
